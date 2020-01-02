@@ -1,0 +1,5 @@
+acl-anthology
+__pycache__
+.idea
+papers/
+auto/
