@@ -64,7 +64,7 @@ if __name__ == "__main__":
   paper_meta = paper_map[paper_id]
   with open(f'papers/{paper_id}.txt', 'r') as f:
     paper_text = '\n'.join(f.readlines())
-  paper_title = paper_meta.title.contents[0]
+  paper_title = ''.join(paper_meta.title.findAll(text=True))
   predicted_tags = paper_classifier.classify(paper_text=paper_text)
 
   print(f'Title: {paper_title}\n'
