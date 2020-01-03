@@ -1,0 +1,8 @@
+# Title: Dual Adversarial Neural Transfer for Low-Resource Named Entity Recognition
+# Online location: https://www.aclweb.org/anthology/P19-1336.pdf
+arch-transformer
+arch-att
+arch-bilstm
+adv-feat
+adv-train
+struct-crf

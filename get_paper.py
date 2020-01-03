@@ -25,6 +25,7 @@ if __name__ == "__main__":
 
   if args.paper_id:
     paper_id = args.paper_id
+    raise NotImplementedError('Haven\'t finished implementing reading in only a single paper ID')
   else:
     years = args.years.split('-')
     confs = args.confs.split(',')
@@ -50,6 +51,7 @@ if __name__ == "__main__":
       randid = random.choice(paper_keys)
       if not os.path.isfile(f'annotations/{randid}.txt') and not os.path.isfile(f'auto/{randid}.txt'):
         paper_id = randid
+        paper_meta = paper_map[paper_id]
         break
 
     if paper_id == None:
@@ -61,7 +63,6 @@ if __name__ == "__main__":
     urllib.request.urlretrieve(f'https://www.aclweb.org/anthology/{paper_id}.pdf', f'papers/{paper_id}.pdf')
     os.system(f'pdftotext papers/{paper_id}.pdf papers/{paper_id}.txt')
 
-  paper_meta = paper_map[paper_id]
   with open(f'papers/{paper_id}.txt', 'r') as f:
     paper_text = '\n'.join(f.readlines())
   paper_title = ''.join(paper_meta.title.findAll(text=True))

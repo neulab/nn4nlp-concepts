@@ -1,0 +1,9 @@
+# Title: Multi-Modal Generative Adversarial Network for Short Product Title Generation in Mobile E-Commerce
+# Online location: https://www.aclweb.org/anthology/N19-2009.pdf
+arch-cnn
+arch-lstm
+arch-att
+activ-tanh
+adv-gan
+task-condlm
+nondif-reinforce

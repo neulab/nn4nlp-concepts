@@ -1,0 +1,5 @@
+# Title: Neural Topic Model with Reinforcement Learning
+# Online location: https://www.aclweb.org/anthology/D19-1350.pdf
+latent-vae
+nondif-reinforce
+optim-adam

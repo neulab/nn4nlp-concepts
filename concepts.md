@@ -14,6 +14,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Mini-batch SGD: `optim-sgd`
 * Adam: `optim-adam` (implies `optim-sgd`)
 * Adagrad: `optim-adagrad` (implies `optim-sgd`)
+* Adam with Specialized Transformer Learning Rate ("Noam" Schedule): `optim-noam` (implies `optim-adam`)
 * SGD with Momentum: `optim-momentum` (implies `optim-sgd`)
 
 ### Regularization
@@ -61,7 +62,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 
 ### Standard Composite Architectures
 
-* Transformer: `arch-transformer` (implies `arch-selfatt`, `arch-residual`, `arch-layernorm`)
+* Transformer: `arch-transformer` (implies `arch-selfatt`, `arch-residual`, `arch-layernorm`, `optim-noam`)
 
 ## Search Algorithms
 
@@ -69,3 +70,54 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Beam Search: `search-beam`
 * A* Search: `search-astar`
 * Viterbi Algorithm: `search-viterbi`
+* Ancestral Sampling: `search-sampling`
+* Gumbel Max: `search-gumbel` (implies `search-sampling`)
+
+## Prediction Tasks
+
+* Text Classification: `task-textclass`
+* Text Pair Classification: `task-textpair`
+* Sequence Labeling: `task-seqlab`
+* Language Modeling: `task-lm`
+* Conditioned Language Modeling: `task-condlm` (implies `task-lm`)
+* Cloze-style Prediction, Masked Language Modeling: `task-cloze`
+* Context Prediction (as in word2vec): `task-context`
+* Dependency Parsing: `task-dependency`
+* Constituency Parsing: `task-constituency`
+
+## Pre-trained Embedding Techniques
+
+* word2vec: `pre-word2vec` (implies `arch-cbow`, `task-cloze`, `task-context`)
+* ELMo: `pre-elmo` (implies `arch-bilstm`, `task-lm`)
+* BERT: `pre-bert` (implies `arch-transformer`, `task-cloze`, `task-textpair`)
+
+## Structured Models/Algorithms
+
+* Hidden Markov Models (HMM): `struct-hmm`
+* Conditional Random Fields (CRF): `struct-crf`
+* Context-free Grammar (CFG): `struct-cfg`
+* Combinatorial Categorical Grammar (CCG): `struct-ccg`
+
+## Relaxation/Training Methods for Non-differentiable Functions
+
+* Complete Enumeration: `nondif-enum`
+* Straight-through Estimator: `nondif-straightthrough`
+* Gumbel Softmax: `nondif-gumbelsoftmax`
+* Minimum Risk Training: `nondif-minrisk` 
+* REINFORCE: `nondif-reinforce` 
+
+## Adversarial Methods
+
+* Generative Adversarial Networks (GAN): `adv-gan`
+* Adversarial Feature Learning: `adv-feat`
+* Adversarial Training: `adv-train`
+
+## Latent Variable Models
+
+* Variational Auto-encoder (VAE): `latent-vae`
+
+## Loss Functions (other than cross-entropy)
+
+* Canonical Correlation Analysis (CCA): `loss-cca`
+* Singular Value Decomposition (SVD): `loss-svd`
+* Margin-based Loss Functions: `loss-margin`
