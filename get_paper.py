@@ -80,6 +80,6 @@ if __name__ == "__main__":
           file=f)
     for tag, conf, just in predicted_tags:
       print(f'# CHECK: confidence={conf}, justification={just}\n'
-            f'tag',
+            f'{tag}',
             file=f)
 
