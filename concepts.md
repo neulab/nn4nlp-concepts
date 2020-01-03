@@ -75,15 +75,18 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 
 ## Prediction Tasks
 
-* Text Classification: `task-textclass`
-* Text Pair Classification: `task-textpair`
-* Sequence Labeling: `task-seqlab`
-* Language Modeling: `task-lm`
-* Conditioned Language Modeling: `task-condlm` (implies `task-lm`)
-* Cloze-style Prediction, Masked Language Modeling: `task-cloze`
-* Context Prediction (as in word2vec): `task-context`
-* Dependency Parsing: `task-dependency`
-* Constituency Parsing: `task-constituency`
+* Text Classification (text -> label): `task-textclass`
+* Text Pair Classification (two texts -> label: `task-textpair`
+* Sequence Labeling (text -> one label per token): `task-seqlab`
+* Extractive Summarization (text -> subset of text): `task-extractive` (implies `text-seqlab`)
+* Span Labeling (text -> labels on spans): `task-spanlab`
+* Language Modeling (predict probability of text): `task-lm`
+* Conditioned Language Modeling (some input -> text): `task-condlm` (implies `task-lm`)
+* Sequence-to-sequence Tasks (text -> text, including MT): `task-seq2seq` (implies `task-condlm`)
+* Cloze-style Prediction, Masked Language Modeling (right and left context -> word): `task-cloze`
+* Context Prediction (as in word2vec) (word -> right and left context): `task-context`
+* Relation Prediction (text -> graph of relations between words, including dependency parsing): `task-relation`
+* Tree Prediction (text -> tree, including syntactic and semantic parsing): `task-tree`
 
 ## Pre-trained Embedding Techniques
 
@@ -110,7 +113,8 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 
 * Generative Adversarial Networks (GAN): `adv-gan`
 * Adversarial Feature Learning: `adv-feat`
-* Adversarial Training: `adv-train`
+* Adversarial Examples: `adv-examp`
+* Adversarial Training: `adv-train` (implies `adv-examp`)
 
 ## Latent Variable Models
 
