@@ -12,7 +12,6 @@ Specifically:
 
 --conceptBytitle.rank: the number of papers that each concept has covered
 
-The similar case happened on full-text based labeling process.
 A similar case happened on a full-text based labeling process.
 
 
