@@ -1,4 +1,4 @@
-#Concept	Concept-fa Keyword
+#Concept	Concept-father Keyword
 # ---------- Optimizers ----------
 optim-sgd	null	SGD|gradient decent
 optim-adam	optim-sgd	Adam
