@@ -1,0 +1,104 @@
+#Concept	Concept-fa Keyword
+# ---------- Optimizers ----------
+optim-sgd	null	SGD|gradient decent
+optim-adam	optim-sgd	Adam
+optim-adagrad	optim-sgd Adagrad
+optim-noam	optim-adam	specialized Transformer learning rate
+optim-momentum	optim-sgd	SGD with Momentum
+# ---------- Regularization ----------
+reg-dropout	null	Dropout|dropout
+reg-norm	null	Norm (L1/L2) Regularization|L2 regularization
+reg-decay	null	weight decay
+# ---------- Normalization ----------
+norm-layer	null	Layer Normalization|layer normalization
+norm-batch	null	Batch Normalization|batch normalization
+# ---------- Activation Functions ----------
+activ-tanh	null	Hyperbolic Tangent|hyperbolic tangent
+activ-relu	null	Rectified Linear Units|rectified linear
+# ---------- Pooling Operations ----------
+pool-max	null	Max Pooling|max-pooling|max pooling
+pool-mean	null	Mean Pooling|mean pooling
+pool-kmax	null	k-Max Pooling|k-max pooling
+# ---------- Recurrent Architectures ----------
+arch-rnn	null	Recurrent Neural Network|RNN|recurrent neural networks
+arch-lstm	arch-rnn	Long Short-term Memory|LSTMs|LSTM
+arch-bilstm	arch-rnn	Bi-directional Long Short-term Memory|BiLSTM|BiLSTMs|Bi-LSTM
+arch-gru	arch-rnn	Gated Recurrent Units|GRU|GRUs
+# ---------- Other Sequential Architectures ----------
+arch-cnn	null	Convolutional Neural Networks|CNNs|convolutional neural network
+arch-att	null	attention
+arch-selfatt	arch-att	Self Attention|self attention|self-attention
+# ---------- Other Sequential Architectures ----------
+arch-residual	null	residual connections
+# ---------- Standard Composite Architectures ----------
+arch-transformer	arch-selfatt	Transformer
+# ---------- Search Algorithms ----------
+search-greedy	null	Greedy Search|greedy search
+search-beam	null	Beam Search|beam search
+search-astar	null	A\* Search
+search-viterbi	null	Viterbi Algorithm|Viterbi|viterbi
+search-sampling	null	Ancestral Sampling|ancestral sampling
+search-gumbel	search-sampling	Gumbel Max|gumbel max
+# ---------- Pre-trained Embedding Techniques ----------
+pre-word2vec	null	word2vec|Word2vec
+pre-elmo	null	ELMo
+pre-bert	null	BERT
+# ---------- Pre-trained Embedding Techniques ----------
+struct-hmm	null	Hidden Markov Models|hidden markov
+struct-crf	null	Conditional Random Fields|conditional random fields|CRF
+struct-cfg	null	Context-free Grammar|context-free grammar
+struct-ccg	null	Combinatorial Categorical Grammar|combinatorial categorical grammar
+# ---------- Relaxation/Training Methods for Non-differentiable Functions ----------
+nondif-enum	null	Complete Enumeration|complete enumeration
+nondif-straightthrough	null	Straight-through Estimator|straight-through estimator
+nondif-gumbelsoftmax	null	Gumbel Softmax|gumbel softmax
+nondif-minrisk	null	Minimum Risk Training|minimum risk
+nondif-reinforce	null	REINFORCE
+# ---------- Adversarial Methods  ----------
+adv-gan	null	Generative Adversarial Networks|GAN|generative adversarial
+adv-feat	null	Adversarial Feature Learning|adversarial feature
+adv-examp	null	Adversarial Examples|adversarial examples
+adv-train	adv-examp	Adversarial Training|adversarial trainin
+# ---------- Latent Variable Models ----------
+latent-vae	null	Variational Auto-encoder|variational auto-encoder|latent variable
+# ---------- Loss Functions ----------
+loss-cca	null	Canonical Correlation Analysis|canonical correlation analysis
+loss-svd	null	Singular Value Decomposition|SVD|singular value decomposition
+loss-margin	null	Margin-based Loss Functions|margin-based|ranking-based loss
+# ---------- Prediction Tasks ----------
+task-textclass	null	Text Classification|text classification
+task-textpair	null	natural language inference|semntic matching|question answering matching
+task-seqlab	null	named entity recogonition|Part-of-Speech|word segmentation|text chunking
+task-extractive	task-seqlab	extractive summarization
+task-spanlab	null	span labeling
+task-lm	null	language modeling|language model
+task-condlm	null	image caption
+task-seq2seq	null	machine translation|abstractive summarization
+task-cloze	null	cloze-style prediction|masked language modeling|text cloze
+task-context	null	context prediction
+task-relation	null	dependency parsing
+task-tree	null	syntactic parsing|semantic parsing
+# ---------- Training: Multi-task/Multi-lingual/Transfer/Meta Learning ----------
+train-multitask	null	multi-task learning
+train-multiling	null	cross-lingual|multi-lingual|cross language
+train-meta	null	meta-learning|MAML
+train-tranfer	null	transfer learning|domain adaptation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
