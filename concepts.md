@@ -52,7 +52,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Recursive Neural Network (RecNN): `arch-recnn`
 * Tree-structured Long Short-term Memory (TreeLSTM): `arch-treelstm`
 * Graph Neural Network (GNN): `arch-gnn`
-* Graph Convolutional Neural Network (GCNN): `arch-gcnn` ((implies `arch-gnn`)
+* Graph Convolutional Neural Network (GCNN): `arch-gcnn` (implies `arch-gnn`)
 
 ### Other Sequential Architectures
 
@@ -68,8 +68,8 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 ### Standard Composite Architectures
 
 * Transformer: `arch-transformer` (implies `arch-selfatt`, `arch-residual`, `arch-layernorm`, `optim-noam`)
-* Siamese: 'arch-siamese'
-* Memory: 'arch-memo'
+* Siamese: `arch-siamese`
+* Memory: `arch-memo`
 
 ## Search Algorithms
 
@@ -135,7 +135,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Margin-based Loss Functions: `loss-margin`
 * Contrastive Loss: `loss-cons`
 * Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
-* Triplet loss: 'loss-triplet' (implies `loss-cons`)
+* Triplet loss: `loss-triplet` (implies `loss-cons`)
 
 ## Training
 
