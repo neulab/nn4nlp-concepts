@@ -2,7 +2,7 @@
 
 -------------update 01-06---------------
 
-a demo for paper labeling individually based on three types of features:
+a demo for labeling paper individually based on three types of features:
 1) title
 2) title + abstract
 3) fulltext
