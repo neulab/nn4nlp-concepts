@@ -1,3 +1,19 @@
+
+
+-------------update 01-06---------------
+
+# a demo for paper labeling individually based on three types of features:
+1) title
+2) title + abstract
+3) fulltext
+
+# requirement: 
+1) python 2.7
+2) pdftotext
+
+
+
+-------------update 01-04---------------
 Here, I attempt to label each paper in two ways:
 
 1) solely based on the  paper's #title#
@@ -6,7 +22,7 @@ Here, I attempt to label each paper in two ways:
 
 Specifically:
 
---template4all.cpt: template of concept definition (most of them are based on you proposed items)
+--template.cpt: template of concept definition (most of them are based on you proposed items)
 
 --conceptBytitle.detail: the detailed concepts covered by each paper (ACL+EMNLP+NAACL2019)
 
