@@ -49,6 +49,10 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Bi-directional Long Short-term Memory (LSTM): `arch-bilstm` (implies `arch-birnn`, `arch-lstm`)
 * Gated Recurrent Units (GRU): `arch-gru` (implies `arch-rnn`)
 * Bi-directional Gated Recurrent Units (GRU): `arch-bigru` (implies `arch-birnn`, `arch-gru`)
+* Recursive Neural Network (RecNN): `arch-recnn`
+* Tree-structured Long Short-term Memory (TreeLSTM): `arch-treelstm`
+* Graph Neural Network (GNN): `arch-gnn`
+* Graph Convolutional Neural Network (GCNN): `arch-gcnn` ((implies `arch-gnn`)
 
 ### Other Sequential Architectures
 
@@ -59,10 +63,13 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 ### Architectural Techniques
 
 * Residual Connections (ResNet): `arch-residual`
+* Gating Connections (Highway): `arch-gating`
 
 ### Standard Composite Architectures
 
 * Transformer: `arch-transformer` (implies `arch-selfatt`, `arch-residual`, `arch-layernorm`, `optim-noam`)
+* Siamese: 'arch-siamese'
+* Memory: 'arch-memo'
 
 ## Search Algorithms
 
@@ -91,6 +98,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 ## Pre-trained Embedding Techniques
 
 * word2vec: `pre-word2vec` (implies `arch-cbow`, `task-cloze`, `task-context`)
+* Glove: `pre-glove`
 * ELMo: `pre-elmo` (implies `arch-bilstm`, `task-lm`)
 * BERT: `pre-bert` (implies `arch-transformer`, `task-cloze`, `task-textpair`)
 
@@ -125,3 +133,13 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Canonical Correlation Analysis (CCA): `loss-cca`
 * Singular Value Decomposition (SVD): `loss-svd`
 * Margin-based Loss Functions: `loss-margin`
+* Contrastive Loss: `loss-cons`
+* Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
+* Triplet loss: 'loss-triplet' (implies `loss-cons`)
+
+## Training
+
+* Multi-task Learning (MTL): `train-mtl`
+* Multi-lingual Learning (MLL): `train-mll`
+* Meta Learning: `train-meta`
+* Transfer Learning: `train-transfer`
