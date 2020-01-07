@@ -11,7 +11,7 @@ import time
 
 
 
-# paper_id:  i.e., 1232
+# paper_id:  
 # paper_meta: store meta information of a paper
 # cased_regexes: a collection of regular expressions based on concepts
 # feature: which part of content will we used to label papers. i.e. "title" or "fulltext"
@@ -56,7 +56,7 @@ if __name__ == "__main__":
   parser = argparse.ArgumentParser(description="Get a paper to try to read and annotate")
 
   parser.add_argument("--paper_id", type=str, default=None,
-                      help="The paper ID to get, if you want to specify a single one (e.g. 1031)")
+                      help="The paper ID to get, if you want to specify a single one (e.g. P84-1031)")
   parser.add_argument("--years", type=str, default="19",
                       help="If a paper ID is not specified, a year (e.g. 19) or range of years (e.g. 99-02) from which"+
                            " to select a random paper.")
@@ -65,6 +65,8 @@ if __name__ == "__main__":
   parser.add_argument("--volumes", type=str, default="1,2",
                       help="A comma-separated list of volumes to include (default is long and short research papers)."+
                            " 'all' for no filtering.")
+  parser.add_argument("--n_sample", type=int, default="1",
+                      help="the number of sampled papers if paper_id is not specified (e.g. 1)")
 
   parser.add_argument("--template", type=str, default="template.cpt",
                       help="The file of concept template (e.g. template.cpt)")
@@ -74,48 +76,67 @@ if __name__ == "__main__":
 
   args = parser.parse_args()
 
-
-  # lead the concept template
-  cased_regexes = paper_classifier.genConceptReg(file_concept=args.template, formate_col = 3)
-
+  # init variables
   feature = args.feature
   paper_id = args.paper_id
-
-  years = args.years.split('-')
-  confs = args.confs.split(',')
+  template = args.template
+  n_sample = args.n_sample
   volumes = args.volumes.split(',')
   paper_map = {}
-  if len(years) == 2:
-    years = list(range(int(years[0]), int(years[1])+1))
-  else:
-    assert len(years) == 1, "invalid format of years, {args.years}"
-  for pref, year in itertools.product(confs, years):
-    year = int(year)
-    pref= pref.upper()
-    with open(f'acl-anthology/data/xml/{pref}{year:02d}.xml', 'r') as f:
-      soup = bs.BeautifulSoup(f, 'xml')
-    for vol in soup.collection.find_all('volume'):
-      if vol.attrs['id'] in volumes:
-        for pap in vol.find_all('paper'):
-          if pap.url:
-            paper_map[pap.url.contents[0]] = pap
+
+  # lead the concept template
+  cased_regexes = paper_classifier.genConceptReg(file_concept=template, formate_col = 3)
+
+  # if paper_id has not been specified
+  if paper_id == None:
+    years = args.years.split('-')
+    confs = args.confs.split(',')
+    if len(years) == 2:
+      years = list(range(int(years[0]), int(years[1])+1))
+    else:
+      assert len(years) == 1, "invalid format of years, {args.years}"
+    for pref, year in itertools.product(confs, years):
+      year = int(year)
+      pref= pref.upper()
+      with open(f'acl-anthology/data/xml/{pref}{year:02d}.xml', 'r') as f:
+        soup = bs.BeautifulSoup(f, 'xml')
+      for vol in soup.collection.find_all('volume'):
+        if vol.attrs['id'] in volumes:
+          for pap in vol.find_all('paper'):
+            if pap.url:
+              paper_map[pap.url.contents[0]] = pap
 
 
-  if paper_id == None: # if paper_id has not been specified
-    num_tries = 10 #magic number
     paper_keys = list(paper_map.keys())
-    for _ in range(num_tries):
+    for _ in range(n_sample):
       randid = random.choice(paper_keys)
-      if not os.path.isfile('annotations/{randid}.txt') and not os.path.isfile('auto/{randid}.txt'):
+      if not os.path.isfile(f'annotations/{randid}.txt') and not os.path.isfile(f'auto/{randid}.txt'):
         paper_id = randid
         paper_meta = paper_map[paper_id]
         #print(paper_meta)
         labelPaper(paper_id, paper_meta, cased_regexes, feature)
+      else:
+        print(f'Warning: {paper_id} has been labeled!')
+
+  # if paper_id is specified
   else:
-      key_p = f'{pref}{year:02d}-'+paper_id
-      if not os.path.isfile('annotations/{key_p}.txt') and not os.path.isfile('auto/{key_p}.txt'):
-        labelPaper(key_p, paper_map[key_p], cased_regexes, feature)
-      if paper_map.__contains__(key_p) == False:
-          print('Warning: {paper_id} can not been found')
-          sys.exit(1)
+    prefix = paper_id.split("-")[0]
+    with open(f'acl-anthology/data/xml/{prefix}.xml', 'r') as f:
+        soup = bs.BeautifulSoup(f, 'xml')
+        for vol in soup.collection.find_all('volume'):
+            if vol.attrs['id'] in volumes:
+              for pap in vol.find_all('paper'):
+                if pap.url and pap.url.contents[0] == paper_id:
+                  paper_map[pap.url.contents[0]] = pap
+                  #print(paper_map[pap.url.contents[0]])
+                  if not os.path.isfile(f'annotations/{paper_id}.txt') and not os.path.isfile(f'auto/{paper_id}.txt'):
+                      labelPaper(paper_id, paper_map[paper_id], cased_regexes, feature)
+                      sys.exit(1)
+                  else:
+                    print(f'Warning: {paper_id} has been labeled!')
+
+    if len(paper_map) == 0:
+      print(f'Warning: {paper_id} can not been found!')
+      sys.exit(1)
+
 
