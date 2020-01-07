@@ -24,7 +24,10 @@ If the paper_id is not specified, 10 samples will be randomly selected from a po
 * 2: `python get_paper.py --years 17-19 --confs P --paper_id 1022 --template template.cpt --feature title`
 If the paper_id has been specified, directly printing related information
 
-
+where:
+`confs`: a comma-separted list of conference abbreviations from which papers can be selected (P,N,D)
+`template`: the file of concept template (e.g. template.cpt)
+`feature`: which part of paper is used to classify (e.g. fulltext or title)
 
 ## How to Contribute
 

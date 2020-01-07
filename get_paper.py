@@ -56,7 +56,7 @@ if __name__ == "__main__":
   parser = argparse.ArgumentParser(description="Get a paper to try to read and annotate")
 
   parser.add_argument("--paper_id", type=str, default=None,
-                      help="The paper ID to get, if you want to specify a single one (e.g. P84-1031)")
+                      help="The paper ID to get, if you want to specify a single one (e.g. 1031)")
   parser.add_argument("--years", type=str, default="19",
                       help="If a paper ID is not specified, a year (e.g. 19) or range of years (e.g. 99-02) from which"+
                            " to select a random paper.")
