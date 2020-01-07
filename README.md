@@ -25,7 +25,7 @@ If the paper_id is not specified, 5 samples will be randomly selected from a poo
 If the paper_id (P19-1032) has been specified, directly printing related information
 
 where:
-* Once the paper_id has been specified, `years`,`confs`, and `n_sample` are not required.
+* once the `paper_id` has been specified, `years`,`confs`, and `n_sample` are not required.
 * `confs`: a comma-separted list of conference abbreviations from which papers can be selected (P,N,D)
 * `n_sample`: the number of sampled papers if paper_id is not specified
 * `template`: the file of concept template (e.g. template.cpt)
