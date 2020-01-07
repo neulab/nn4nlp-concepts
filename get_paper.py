@@ -11,26 +11,29 @@ import time
 
 
 
-
+# paper_id:  i.e., 1232
+# paper_meta: store meta information of a paper
+# cased_regexes: a collection of regular expressions based on concepts
+# feature: which part of content will we used to label papers. i.e. "title" or "fulltext"
 def labelPaper(paper_id = None, paper_meta = None, cased_regexes = None, feature = None): 
   if not os.path.isfile(f'papers/{paper_id}.pdf'):
     os.makedirs(f'papers/', exist_ok=True)
     urllib.request.urlretrieve(f'https://www.aclweb.org/anthology/{paper_id}.pdf', f'papers/{paper_id}.pdf')
-    #time.sleep(2) 
+    #time.sleep(2) # maybe we would wait some time until downloading processing finishes.
     os.system(f'pdftotext papers/{paper_id}.pdf papers/{paper_id}.txt')
   with open(f'papers/{paper_id}.txt', 'r') as f:
     paper_text = '\n'.join(f.readlines())
   paper_title = ''.join(paper_meta.title.findAll(text=True))
 
-  flag = 1 
+  is_cased = 1 # if case-sensitive
   if feature == "title":
     feature = paper_title
-    flag = 0
+    is_cased = 0
   elif feature == "fulltext":
     feature = paper_text
-    flag = 1
+    is_cased = 1
 
-  predicted_tags = paper_classifier.classify(feature, cased_regexes, flag)
+  predicted_tags = paper_classifier.classify(feature, cased_regexes, is_cased)
   print(f'Title: {paper_title}\n'
         f'Local location: papers/{paper_id}.pdf\n'
         f'Online location: https://www.aclweb.org/anthology/{paper_id}.pdf\n'
@@ -38,6 +41,7 @@ def labelPaper(paper_id = None, paper_meta = None, cased_regexes = None, feature
   for i, tag in enumerate(predicted_tags):
     print(f'Tag {i}: {tag}')
   print("------------------------------------------------\n")
+
   os.makedirs(f'auto/', exist_ok=True)
   fin = open(f'auto/{paper_id}.txt', 'w')
   print(f'# Title: {paper_title}\n',f'# Online location: https://www.aclweb.org/anthology/{paper_id}.pdf', file=fin)
@@ -71,11 +75,12 @@ if __name__ == "__main__":
   args = parser.parse_args()
 
 
+  # lead the concept template
   cased_regexes = paper_classifier.genConceptReg(file_concept=args.template, formate_col = 3)
+
   feature = args.feature
-
-
   paper_id = args.paper_id
+
   years = args.years.split('-')
   confs = args.confs.split(',')
   volumes = args.volumes.split(',')
@@ -96,8 +101,8 @@ if __name__ == "__main__":
             paper_map[pap.url.contents[0]] = pap
 
 
-  if paper_id == None:
-    num_tries = 10
+  if paper_id == None: # if paper_id has not been specified
+    num_tries = 10 #magic number
     paper_keys = list(paper_map.keys())
     for _ in range(num_tries):
       randid = random.choice(paper_keys)
@@ -106,17 +111,11 @@ if __name__ == "__main__":
         paper_meta = paper_map[paper_id]
         #print(paper_meta)
         labelPaper(paper_id, paper_meta, cased_regexes, feature)
-        #break
-      #break
   else:
-      #print(paper_map.keys())
-      #print(len(paper_map))
       key_p = f'{pref}{year:02d}-'+paper_id
-      labelPaper(key_p, paper_map[key_p], cased_regexes, feature)
-      # if paper_id == None:
-      #   print('WARNING: Tried {num_tries} random papers and couldn\'t find an unannotated one. Maybe you\'re done annotating?', file=sys.stderr)
-      #   sys.exit(1)
-
-      #paper_id = randid
-
+      if not os.path.isfile('annotations/{key_p}.txt') and not os.path.isfile('auto/{key_p}.txt'):
+        labelPaper(key_p, paper_map[key_p], cased_regexes, feature)
+      if paper_map.__contains__(key_p) == False:
+          print('Warning: {paper_id} can not been found')
+          sys.exit(1)
 

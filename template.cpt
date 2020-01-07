@@ -30,6 +30,8 @@ arch-att	null	attention
 arch-selfatt	arch-att	Self Attention|self attention|self-attention
 # ---------- Other Sequential Architectures ----------
 arch-residual	null	residual connections
+arch-gating	null	gating connections|Highway
+arch-memo	null	memory network|external memory
 # ---------- Standard Composite Architectures ----------
 arch-transformer	arch-selfatt	Transformer
 # ---------- Search Algorithms ----------
@@ -41,6 +43,7 @@ search-sampling	null	Ancestral Sampling|ancestral sampling
 search-gumbel	search-sampling	Gumbel Max|gumbel max
 # ---------- Pre-trained Embedding Techniques ----------
 pre-word2vec	null	word2vec|Word2vec
+pre-glove	null	glove|GLoVe
 pre-elmo	null	ELMo
 pre-bert	null	BERT
 # ---------- Pre-trained Embedding Techniques ----------
@@ -78,12 +81,15 @@ task-cloze	null	cloze-style prediction|masked language modeling|text cloze
 task-context	null	context prediction
 task-relation	null	dependency parsing
 task-tree	null	syntactic parsing|semantic parsing
-# ---------- Training: Multi-task/Multi-lingual/Transfer/Meta Learning ----------
+# ---------- Training Paradigms: Multi-task/Multi-lingual/Transfer ----------
 train-multitask	null	multi-task learning
-train-multiling	null	cross-lingual|multi-lingual|cross language
-train-meta	null	meta-learning|MAML
+train-multiling	train-multitask	cross-lingual|multi-lingual|cross language
 train-tranfer	null	transfer learning|domain adaptation
-
+# ---------- Meta Learning ----------
+meta-init	null	MAML|Initialization
+meta-optim	null	meta optimizer|meta learner
+meta-loss	null	meta learning loss
+meta-arch	null	architecture search
 
 
 
