@@ -15,6 +15,17 @@ And download the git submodule of the ACL Anthology:
 
     git clone https://github.com/acl-org/acl-anthology.git
 
+
+## Examples:
+
+* 1: `python get_paper.py --years 18-19 --confs P  --template template.cpt --feature fulltext`
+If the paper_id is not specified, 10 samples will be randomly selected from a pool of papers;
+ 
+* 2: `python get_paper.py --years 17-19 --confs P --paper_id 1022 --template template.cpt --feature title'
+If the paper_id has been specified, directly printing related information
+
+
+
 ## How to Contribute
 
 1. Read `concepts.md` to learn more about the concepts that are annotated here.
