@@ -50,7 +50,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Gated Recurrent Units (GRU): `arch-gru` (implies `arch-rnn`)
 * Bi-directional Gated Recurrent Units (GRU): `arch-bigru` (implies `arch-birnn`, `arch-gru`)
 * Recursive Neural Network (RecNN): `arch-recnn`
-* Tree-structured Long Short-term Memory (TreeLSTM): `arch-treelstm`
+* Tree-structured Long Short-term Memory (TreeLSTM): `arch-treelstm` (implies `arch-recnn`)
 * Graph Neural Network (GNN): `arch-gnn`
 * Graph Convolutional Neural Network (GCNN): `arch-gcnn` (implies `arch-gnn`)
 
@@ -63,13 +63,13 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 ### Architectural Techniques
 
 * Residual Connections (ResNet): `arch-residual`
-* Gating Connections (Highway): `arch-gating`
+* Gating Connections, Highway Connections: `arch-gating`
+* Memory: `arch-memo`
 
 ### Standard Composite Architectures
 
 * Transformer: `arch-transformer` (implies `arch-selfatt`, `arch-residual`, `arch-layernorm`, `optim-noam`)
-* Siamese: `arch-siamese`
-* Memory: `arch-memo`
+
 
 ## Search Algorithms
 
@@ -137,9 +137,14 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
 * Triplet loss: `loss-triplet` (implies `loss-cons`)
 
-## Training
+## Training Paradigms
 
 * Multi-task Learning (MTL): `train-mtl`
-* Multi-lingual Learning (MLL): `train-mll`
-* Meta Learning: `train-meta`
+* Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
 * Transfer Learning: `train-transfer`
+
+## Meta Learning
+* Meta-learning Initialization: `meta-init`
+* Meta-learning Optimizers: `meta-optim`
+* Meta-learning Loss functions: `meta-loss`
+* Neural Architecture Search: `meta-arch`
