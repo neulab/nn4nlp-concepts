@@ -142,6 +142,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Multi-task Learning (MTL): `train-mtl`
 * Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
 * Transfer Learning: `train-transfer`
+* Active Learning: `train-active`
 
 ## Meta Learning
 * Meta-learning Initialization: `meta-init`
