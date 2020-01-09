@@ -12,13 +12,9 @@ do not need to be annotated if they are simply mentioned in passing, or in the r
 **Implication**: Some tags are listed with "`XXX` (implies `YYY`)" which means you need to understand a particular
 concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, you do not need to annotate `XXX`.
 
-## Meta-tag
-
-This conceptual hierarchy is for tagging papers that are about neural network models for NLP. If a paper is not
-fundamentally about some application of neural networks to NLP, it should be tagged with the following tag and
-no other tags need to be applied.
-
-* Not a Neural Network Paper: `non-neural`
+**Non-neural Papers**: This conceptual hierarchy is for tagging papers that are about neural network models for NLP.
+If a paper is not fundamentally about some application of neural networks to NLP, it should be tagged with `not-neural`,
+and no other tags need to be applied.
 
 ## Optimization/Learning
 
