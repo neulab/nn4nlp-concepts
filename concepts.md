@@ -1,11 +1,24 @@
 # Concept Hierarchy in Neural Networks for NLP
 
-In each section, we will have a few basic concepts that we assume need to be known for virtually every paper, and
-thus don't need to be specifically labeled. Then we will have a list of concepts that do need to be labeled, along
-with their tags. 
+Below is a list of important concepts in neural networks for NLP. In the `annotations/` directory in this repository,
+we have examples of papers annotated with these concepts that you can peruse.
+
+**Annotation Critera**: For a particular paper, the concept should be annotated if it is important to understand the
+proposed method. It should also be annotated if it's important to understand the evaluation. For example, if a
+proposed self-attention model is compared to a baseline that uses an LSTM, and the difference between these two
+methods is important to understanding the experimental results, then the LSTM concept should also be annotated. Concepts
+do not need to be annotated if they are simply mentioned in passing, or in the related work section.
 
 **Implication**: Some tags are listed with "`XXX` (implies `YYY`)" which means you need to understand a particular
-concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, you do not need to annotated `XXX`.
+concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, you do not need to annotate `XXX`.
+
+## Meta-tag
+
+This conceptual hierarchy is for tagging papers that are about neural network models for NLP. If a paper is not
+fundamentally about some application of neural networks to NLP, it should be tagged with the following tag and
+no other tags need to be applied.
+
+* Not a Neural Network Paper: `non-neural`
 
 ## Optimization/Learning
 
@@ -14,6 +27,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Mini-batch SGD: `optim-sgd`
 * Adam: `optim-adam` (implies `optim-sgd`)
 * Adagrad: `optim-adagrad` (implies `optim-sgd`)
+* Adadelta: `optim-adadelta` (implies `optim-sgd`)
 * Adam with Specialized Transformer Learning Rate ("Noam" Schedule): `optim-noam` (implies `optim-adam`)
 * SGD with Momentum: `optim-momentum` (implies `optim-sgd`)
 
@@ -127,6 +141,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 ## Latent Variable Models
 
 * Variational Auto-encoder (VAE): `latent-vae`
+* Topic Model: `latent-topic`
 
 ## Loss Functions (other than cross-entropy)
 

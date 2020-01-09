@@ -44,9 +44,9 @@ def labelPaper(paper_id = None, paper_meta = None, cased_regexes = None, feature
 
   os.makedirs(f'auto/', exist_ok=True)
   fin = open(f'auto/{paper_id}.txt', 'w')
-  print(f'# Title: {paper_title}\n',f'# Online location: https://www.aclweb.org/anthology/{paper_id}.pdf', file=fin)
+  print(f'# Title: {paper_title}\n# Online location: https://www.aclweb.org/anthology/{paper_id}.pdf', file=fin)
   for tag, conf, just in predicted_tags:
-    print(f'# CHECK: confidence={conf}, justification={just}\n', f'{tag}',file=fin)
+    print(f'# CHECK: confidence={conf}, justification={just}\n{tag}',file=fin)
 
 
 

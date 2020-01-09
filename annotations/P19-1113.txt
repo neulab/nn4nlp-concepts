@@ -1,0 +1,10 @@
+# Title: Rumor Detection by Exploiting User Credibility Information, Attention and Multi-task Learning
+# Online location: https://www.aclweb.org/anthology/P19-1113.pdf
+reg-dropout
+optim-adadelta
+arch-lstm
+arch-gru
+train-multitask
+arch-att
+task-textclass
+pre-word2vec
