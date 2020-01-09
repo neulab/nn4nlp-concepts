@@ -49,6 +49,10 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Bi-directional Long Short-term Memory (LSTM): `arch-bilstm` (implies `arch-birnn`, `arch-lstm`)
 * Gated Recurrent Units (GRU): `arch-gru` (implies `arch-rnn`)
 * Bi-directional Gated Recurrent Units (GRU): `arch-bigru` (implies `arch-birnn`, `arch-gru`)
+* Recursive Neural Network (RecNN): `arch-recnn`
+* Tree-structured Long Short-term Memory (TreeLSTM): `arch-treelstm` (implies `arch-recnn`)
+* Graph Neural Network (GNN): `arch-gnn`
+* Graph Convolutional Neural Network (GCNN): `arch-gcnn` (implies `arch-gnn`)
 
 ### Other Sequential Architectures
 
@@ -59,10 +63,13 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 ### Architectural Techniques
 
 * Residual Connections (ResNet): `arch-residual`
+* Gating Connections, Highway Connections: `arch-gating`
+* Memory: `arch-memo`
 
 ### Standard Composite Architectures
 
 * Transformer: `arch-transformer` (implies `arch-selfatt`, `arch-residual`, `arch-layernorm`, `optim-noam`)
+
 
 ## Search Algorithms
 
@@ -91,6 +98,7 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 ## Pre-trained Embedding Techniques
 
 * word2vec: `pre-word2vec` (implies `arch-cbow`, `task-cloze`, `task-context`)
+* Glove: `pre-glove`
 * ELMo: `pre-elmo` (implies `arch-bilstm`, `task-lm`)
 * BERT: `pre-bert` (implies `arch-transformer`, `task-cloze`, `task-textpair`)
 
@@ -125,3 +133,19 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Canonical Correlation Analysis (CCA): `loss-cca`
 * Singular Value Decomposition (SVD): `loss-svd`
 * Margin-based Loss Functions: `loss-margin`
+* Contrastive Loss: `loss-cons`
+* Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
+* Triplet loss: `loss-triplet` (implies `loss-cons`)
+
+## Training Paradigms
+
+* Multi-task Learning (MTL): `train-mtl`
+* Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
+* Transfer Learning: `train-transfer`
+* Active Learning: `train-active`
+
+## Meta Learning
+* Meta-learning Initialization: `meta-init`
+* Meta-learning Optimizers: `meta-optim`
+* Meta-learning Loss functions: `meta-loss`
+* Neural Architecture Search: `meta-arch`
