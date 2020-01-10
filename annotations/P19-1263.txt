@@ -1,0 +1,11 @@
+# Title: Exploiting Explicit Paths for Multi-hop Reading Comprehension
+# Online location: https://www.aclweb.org/anthology/P19-1263.pdf
+optim-adam
+norm-gradient
+reg-dropout
+arch-bilstm
+arch-gru
+arch-att
+search-beam
+pre-elmo
+pre-glove

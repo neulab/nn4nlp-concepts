@@ -38,6 +38,14 @@ and no other tags need to be applied.
 
 * Layer Normalization: `norm-layer`
 * Batch Normalization: `norm-batch`
+* Gradient Clipping: `norm-gradient`
+
+## Training Paradigms
+
+* Multi-task Learning (MTL): `train-mtl`
+* Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
+* Transfer Learning: `train-transfer`
+* Active Learning: `train-active`
 
 ## Sequence Modeling Architectures
 
@@ -76,6 +84,7 @@ and no other tags need to be applied.
 * Residual Connections (ResNet): `arch-residual`
 * Gating Connections, Highway Connections: `arch-gating`
 * Memory: `arch-memo`
+* Copy Mechanism: `arch-copy`
 
 ### Standard Composite Architectures
 
@@ -109,7 +118,7 @@ and no other tags need to be applied.
 ## Pre-trained Embedding Techniques
 
 * word2vec: `pre-word2vec` (implies `arch-cbow`, `task-cloze`, `task-context`)
-* Glove: `pre-glove`
+* GloVe: `pre-glove`
 * ELMo: `pre-elmo` (implies `arch-bilstm`, `task-lm`)
 * BERT: `pre-bert` (implies `arch-transformer`, `task-cloze`, `task-textpair`)
 
@@ -148,13 +157,6 @@ and no other tags need to be applied.
 * Contrastive Loss: `loss-cons`
 * Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
 * Triplet loss: `loss-triplet` (implies `loss-cons`)
-
-## Training Paradigms
-
-* Multi-task Learning (MTL): `train-mtl`
-* Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
-* Transfer Learning: `train-transfer`
-* Active Learning: `train-active`
 
 ## Meta Learning
 * Meta-learning Initialization: `meta-init`
