@@ -1,26 +1,6 @@
 import os
 import sys
 import re
-# uncased_regexes = [
-#   (r'convolutional', 'arch-cnn', 0.9),
-#   (r'variational auto-*encoder', 'latent-vae', 0.9),
-#   (r'generative adversarial', 'adv-gan', 0.9),
-#   (r'attention', 'arch-att', 0.9),
-#   (r'bi-lstm', 'arch-bilstm', 0.9),
-#   (r'canonical correlation', 'loss-cca', 0.9),
-# ]
-
-
-# cased_regexes = [
-#   (r'Transformer', 'arch-transformer',0.9),
-#   (r'BERT', 'embed-bert', 0.9),
-#   (r'ELMo', 'embed-elmo', 0.9),
-#   (r'LSTM', 'arch-lstm', 0.9),
-#   (r'VAE', 'latent-vae', 0.9),
-#   (r'GAN', 'adv-gan', 0.9),
-#   (r'CCA', 'loss-cca', 0.9),
-# ]
-
 
 # generate regular expression from a concept template
 # the formate of template:

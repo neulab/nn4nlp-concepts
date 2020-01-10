@@ -1,0 +1,5 @@
+# Title: Frustratingly Easy Meta-Embedding – Computing Meta-Embeddings by Averaging Source Word Embeddings
+# Online location: https://www.aclweb.org/anthology/N18-2031.pdf
+pool-mean
+pre-glove
+pre-word2vec

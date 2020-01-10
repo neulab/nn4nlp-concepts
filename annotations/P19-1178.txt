@@ -1,0 +1,11 @@
+# Title: Self-Supervised Neural Machine Translation
+# Online location: https://www.aclweb.org/anthology/P19-1178.pdf
+optim-noam
+reg-dropout
+reg-labelsmooth
+arch-lstm
+arch-transformer
+loss-margin
+task-lm
+task-seq2seq
+train-transfer

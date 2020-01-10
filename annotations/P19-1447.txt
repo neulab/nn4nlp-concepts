@@ -1,0 +1,9 @@
+# Title: Reranking for Neural Semantic Parsing
+# Online location: https://www.aclweb.org/anthology/P19-1447.pdf
+arch-att
+arch-copy
+arch-bilstm
+task-tree
+task-textpair
+search-beam
+nondif-minrisk

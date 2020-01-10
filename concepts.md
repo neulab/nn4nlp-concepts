@@ -1,11 +1,20 @@
 # Concept Hierarchy in Neural Networks for NLP
 
-In each section, we will have a few basic concepts that we assume need to be known for virtually every paper, and
-thus don't need to be specifically labeled. Then we will have a list of concepts that do need to be labeled, along
-with their tags. 
+Below is a list of important concepts in neural networks for NLP. In the `annotations/` directory in this repository,
+we have examples of papers annotated with these concepts that you can peruse.
+
+**Annotation Critera**: For a particular paper, the concept should be annotated if it is important to understand the
+proposed method. It should also be annotated if it's important to understand the evaluation. For example, if a
+proposed self-attention model is compared to a baseline that uses an LSTM, and the difference between these two
+methods is important to understanding the experimental results, then the LSTM concept should also be annotated. Concepts
+do not need to be annotated if they are simply mentioned in passing, or in the related work section.
 
 **Implication**: Some tags are listed with "`XXX` (implies `YYY`)" which means you need to understand a particular
-concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, you do not need to annotated `XXX`.
+concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, you do not need to annotate `XXX`.
+
+**Non-neural Papers**: This conceptual hierarchy is for tagging papers that are about neural network models for NLP.
+If a paper is not fundamentally about some application of neural networks to NLP, it should be tagged with `not-neural`,
+and no other tags need to be applied.
 
 ## Optimization/Learning
 
@@ -14,19 +23,41 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Mini-batch SGD: `optim-sgd`
 * Adam: `optim-adam` (implies `optim-sgd`)
 * Adagrad: `optim-adagrad` (implies `optim-sgd`)
+* Adadelta: `optim-adadelta` (implies `optim-sgd`)
 * Adam with Specialized Transformer Learning Rate ("Noam" Schedule): `optim-noam` (implies `optim-adam`)
 * SGD with Momentum: `optim-momentum` (implies `optim-sgd`)
 
 ### Regularization
 
 * Dropout: `reg-dropout`
+* Word Dropout: `reg-worddropout` (implies `reg-dropout`)
 * Norm (L1/L2) Regularization: `reg-norm`
+* Early Stopping: `reg-stopping`
+* Patience: `reg-patience` (implies `reg-stopping`)
 * Weight Decay: `reg-decay`
+* Label Smoothing: `reg-labelsmooth`
 
 ### Normalization
 
 * Layer Normalization: `norm-layer`
 * Batch Normalization: `norm-batch`
+* Gradient Clipping: `norm-gradient`
+
+### Loss Functions (other than cross-entropy)
+
+* Canonical Correlation Analysis (CCA): `loss-cca`
+* Singular Value Decomposition (SVD): `loss-svd`
+* Margin-based Loss Functions: `loss-margin`
+* Contrastive Loss: `loss-cons`
+* Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
+* Triplet loss: `loss-triplet` (implies `loss-cons`)
+
+### Training Paradigms
+
+* Multi-task Learning (MTL): `train-mtl`
+* Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
+* Transfer Learning: `train-transfer`
+* Active Learning: `train-active`
 
 ## Sequence Modeling Architectures
 
@@ -65,11 +96,16 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Residual Connections (ResNet): `arch-residual`
 * Gating Connections, Highway Connections: `arch-gating`
 * Memory: `arch-memo`
+* Copy Mechanism: `arch-copy`
 
 ### Standard Composite Architectures
 
 * Transformer: `arch-transformer` (implies `arch-selfatt`, `arch-residual`, `arch-layernorm`, `optim-noam`)
 
+
+## Model Combination
+
+* Ensembling: `comb-ensemble`
 
 ## Search Algorithms
 
@@ -95,10 +131,10 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 * Relation Prediction (text -> graph of relations between words, including dependency parsing): `task-relation`
 * Tree Prediction (text -> tree, including syntactic and semantic parsing): `task-tree`
 
-## Pre-trained Embedding Techniques
+## Composite Pre-trained Embedding Techniques
 
 * word2vec: `pre-word2vec` (implies `arch-cbow`, `task-cloze`, `task-context`)
-* Glove: `pre-glove`
+* GloVe: `pre-glove`
 * ELMo: `pre-elmo` (implies `arch-bilstm`, `task-lm`)
 * BERT: `pre-bert` (implies `arch-transformer`, `task-cloze`, `task-textpair`)
 
@@ -127,24 +163,10 @@ concept `XXX` in order to understand concept `YYY`. If `YYY` exists in a paper, 
 ## Latent Variable Models
 
 * Variational Auto-encoder (VAE): `latent-vae`
-
-## Loss Functions (other than cross-entropy)
-
-* Canonical Correlation Analysis (CCA): `loss-cca`
-* Singular Value Decomposition (SVD): `loss-svd`
-* Margin-based Loss Functions: `loss-margin`
-* Contrastive Loss: `loss-cons`
-* Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
-* Triplet loss: `loss-triplet` (implies `loss-cons`)
-
-## Training Paradigms
-
-* Multi-task Learning (MTL): `train-mtl`
-* Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
-* Transfer Learning: `train-transfer`
-* Active Learning: `train-active`
+* Topic Model: `latent-topic`
 
 ## Meta Learning
+
 * Meta-learning Initialization: `meta-init`
 * Meta-learning Optimizers: `meta-optim`
 * Meta-learning Loss functions: `meta-loss`

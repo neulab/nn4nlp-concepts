@@ -3,15 +3,26 @@
 optim-sgd	null	SGD|gradient decent
 optim-adam	optim-sgd	Adam
 optim-adagrad	optim-sgd Adagrad
+optim-adadelta	optim-sgd Adadelta
 optim-noam	optim-adam	specialized Transformer learning rate
 optim-momentum	optim-sgd	SGD with Momentum
 # ---------- Regularization ----------
 reg-dropout	null	Dropout|dropout
+reg-worddropout	null	word dropout
+reg-stopping	null	early stopping
+reg-patience	null	patience
 reg-norm	null	Norm (L1/L2) Regularization|L2 regularization
 reg-decay	null	weight decay
+reg-labelsmooth	null	label smooth
 # ---------- Normalization ----------
 norm-layer	null	Layer Normalization|layer normalization
 norm-batch	null	Batch Normalization|batch normalization
+norm-gradient	null	gradient clipping|gradient normalization|clipnorm
+# ---------- Training Paradigms: Multi-task/Multi-lingual/Transfer ----------
+train-multitask	null	multi-task learning
+train-multiling	train-multitask	cross-lingual|multi-lingual|cross language
+train-transfer	null	transfer learning|domain adaptation
+train-active	null	active learning
 # ---------- Activation Functions ----------
 activ-tanh	null	Hyperbolic Tangent|hyperbolic tangent
 activ-relu	null	Rectified Linear Units|rectified linear
@@ -28,12 +39,15 @@ arch-gru	arch-rnn	Gated Recurrent Units|GRU|GRUs
 arch-cnn	null	Convolutional Neural Networks|CNNs|convolutional neural network
 arch-att	null	attention
 arch-selfatt	arch-att	Self Attention|self attention|self-attention
-# ---------- Other Sequential Architectures ----------
+# ---------- Architectural Techniques ----------
 arch-residual	null	residual connections
 arch-gating	null	gating connections|Highway
 arch-memo	null	memory network|external memory
+arch-copy	null	copy mechanism|copying mechanism
 # ---------- Standard Composite Architectures ----------
 arch-transformer	arch-selfatt	Transformer
+# ---------- Model Combination ----------
+comb-ensemble	null	ensemble|ensembling
 # ---------- Search Algorithms ----------
 search-greedy	null	Greedy Search|greedy search
 search-beam	null	Beam Search|beam search
@@ -43,7 +57,7 @@ search-sampling	null	Ancestral Sampling|ancestral sampling
 search-gumbel	search-sampling	Gumbel Max|gumbel max
 # ---------- Pre-trained Embedding Techniques ----------
 pre-word2vec	null	word2vec|Word2vec
-pre-glove	null	glove|GLoVe
+pre-glove	null	glove|GloVe
 pre-elmo	null	ELMo
 pre-bert	null	BERT
 # ---------- Pre-trained Embedding Techniques ----------
@@ -70,8 +84,8 @@ loss-svd	null	Singular Value Decomposition|SVD|singular value decomposition
 loss-margin	null	Margin-based Loss Functions|margin-based|ranking-based loss
 # ---------- Prediction Tasks ----------
 task-textclass	null	Text Classification|text classification
-task-textpair	null	natural language inference|semntic matching|question answering matching
-task-seqlab	null	named entity recogonition|Part-of-Speech|word segmentation|text chunking
+task-textpair	null	natural language inference|semantic matching|question answering matching
+task-seqlab	null	named entity recognition|Part-of-Speech|word segmentation|text chunking
 task-extractive	task-seqlab	extractive summarization
 task-spanlab	null	span labeling
 task-lm	null	language modeling|language model
@@ -81,10 +95,6 @@ task-cloze	null	cloze-style prediction|masked language modeling|text cloze
 task-context	null	context prediction
 task-relation	null	dependency parsing
 task-tree	null	syntactic parsing|semantic parsing
-# ---------- Training Paradigms: Multi-task/Multi-lingual/Transfer ----------
-train-multitask	null	multi-task learning
-train-multiling	train-multitask	cross-lingual|multi-lingual|cross language
-train-tranfer	null	transfer learning|domain adaptation
 # ---------- Meta Learning ----------
 meta-init	null	MAML|Initialization
 meta-optim	null	meta optimizer|meta learner

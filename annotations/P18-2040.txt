@@ -1,0 +1,3 @@
+# Title: Improving Topic Quality by Promoting Named Entities in Topic Modeling
+# Online location: https://www.aclweb.org/anthology/P18-2040.pdf
+not-neural
