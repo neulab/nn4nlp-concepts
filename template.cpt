@@ -32,7 +32,7 @@ activ-tanh	null	Hyperbolic Tangent|hyperbolic tangent
 activ-relu	null	Rectified Linear Units|rectified linear
 # ---------- Pooling Operations ----------
 pool-max	null	Max Pooling|max-pooling|max pooling
-pool-mean	null	Mean Pooling|mean pooling
+pool-mean	null	Mean Pooling|mean pooling|Average Pooling|average pooling
 pool-kmax	null	k-Max Pooling|k-max pooling
 # ---------- Recurrent Architectures ----------
 arch-rnn	null	Recurrent Neural Network|RNN|recurrent neural networks
@@ -53,7 +53,7 @@ arch-residual	null	residual connections
 arch-gating	null	gating connections|Highway
 arch-memo	null	memory network|external memory
 arch-copy	null	copy mechanism|copying mechanism
-arch-bilinear	null	bilinear|bi-linear
+arch-bilinear	null	bilinear|bi-linear|biaffine|bi-affine
 # ---------- Standard Composite Architectures ----------
 arch-transformer	arch-selfatt	Transformer
 # ---------- Model Combination ----------
@@ -98,33 +98,18 @@ task-textpair	null	natural language inference|semantic matching|question answeri
 task-seqlab	null	named entity recognition|Part-of-Speech|word segmentation|text chunking
 task-extractive	task-seqlab	extractive summarization
 task-spanlab	null	span labeling
-task-lm	null	language modeling|language model
+task-lm	null	language model
 task-condlm	null	image caption
-task-seq2seq	null	machine translation|abstractive summarization
-task-cloze	null	cloze-style prediction|masked language modeling|text cloze
+task-seq2seq	null	machine translat|abstractive summarization
+task-cloze	null	cloze-style prediction|masked language model|text cloze
 task-context	null	context prediction
-task-relation	null	dependency parsing
-task-tree	null	syntactic parsing|semantic parsing
+task-relation	null	dependency pars
+task-tree	null	syntactic pars|semantic pars
+task-graph	null	AMR|UDD
+task-lexicon	null	lexicon induction|bi-lingual embedding|embedding alignment|MUSE
+task-alignment	null	word alignment|GIZA++
 # ---------- Meta Learning ----------
 meta-init	null	MAML|Initialization
 meta-optim	null	meta optimizer|meta learner
 meta-loss	null	meta learning loss
 meta-arch	null	architecture search
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

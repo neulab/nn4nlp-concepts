@@ -1,0 +1,12 @@
+# Title: Domain Adaptation of Neural Machine Translation by Lexicon Induction
+# Online location: https://www.aclweb.org/anthology/P19-1286.pdf
+loss-svd
+arch-lstm
+arch-transformer
+adv-feat
+train-augment
+train-transfer
+optim-adam
+search-beam
+task-seq2seq
+task-lexicon

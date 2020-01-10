@@ -64,6 +64,7 @@ and no other tags need to be applied.
 * Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
 * Transfer Learning: `train-transfer`
 * Active Learning: `train-active`
+* Data Augmentation: `train-augment`
 
 ## Sequence Modeling Architectures
 
@@ -103,7 +104,7 @@ and no other tags need to be applied.
 * Gating Connections, Highway Connections: `arch-gating`
 * Memory: `arch-memo`
 * Copy Mechanism: `arch-copy`
-* Bilinear Models: `arch-bilinear`
+* Bilinear, Biaffine Models: `arch-bilinear`
 
 ### Standard Composite Architectures
 
@@ -136,7 +137,10 @@ and no other tags need to be applied.
 * Cloze-style Prediction, Masked Language Modeling (right and left context -> word): `task-cloze`
 * Context Prediction (as in word2vec) (word -> right and left context): `task-context`
 * Relation Prediction (text -> graph of relations between words, including dependency parsing): `task-relation`
-* Tree Prediction (text -> tree, including syntactic and semantic parsing): `task-tree`
+* Tree Prediction (text -> tree, including syntactic and some semantic semantic parsing): `task-tree`
+* Graph Prediction (text -> graph not necessarily between nodes): `task-graph`
+* Lexicon Induction/Embedding Alignment (text/embeddings -> bi- or multi-lingual lexicon): `task-lexicon`
+* Word Alignment (parallel text -> alignment between words): `task-alignment`
 
 ## Composite Pre-trained Embedding Techniques
 

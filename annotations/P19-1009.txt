@@ -1,0 +1,18 @@
+# Title: AMR Parsing as Sequence-to-Graph Transduction
+# Online location: https://www.aclweb.org/anthology/P19-1009.pdf
+optim-adam
+reg-dropout
+reg-stopping
+arch-bilinear
+arch-cnn
+task-graph
+norm-gradient
+arch-lstm
+pool-mean
+pool-max
+arch-att
+arch-copy
+search-greedy
+search-beam
+pre-glove
+pre-bert
