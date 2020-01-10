@@ -43,7 +43,16 @@ and no other tags need to be applied.
 * Batch Normalization: `norm-batch`
 * Gradient Clipping: `norm-gradient`
 
-## Training Paradigms
+### Loss Functions (other than cross-entropy)
+
+* Canonical Correlation Analysis (CCA): `loss-cca`
+* Singular Value Decomposition (SVD): `loss-svd`
+* Margin-based Loss Functions: `loss-margin`
+* Contrastive Loss: `loss-cons`
+* Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
+* Triplet loss: `loss-triplet` (implies `loss-cons`)
+
+### Training Paradigms
 
 * Multi-task Learning (MTL): `train-mtl`
 * Multi-lingual Learning (MLL): `train-mll` (implies `train-mtl`)
@@ -94,6 +103,10 @@ and no other tags need to be applied.
 * Transformer: `arch-transformer` (implies `arch-selfatt`, `arch-residual`, `arch-layernorm`, `optim-noam`)
 
 
+## Model Combination
+
+* Ensembling: `comb-ensemble`
+
 ## Search Algorithms
 
 * Greedy Search: `search-greedy`
@@ -118,7 +131,7 @@ and no other tags need to be applied.
 * Relation Prediction (text -> graph of relations between words, including dependency parsing): `task-relation`
 * Tree Prediction (text -> tree, including syntactic and semantic parsing): `task-tree`
 
-## Pre-trained Embedding Techniques
+## Composite Pre-trained Embedding Techniques
 
 * word2vec: `pre-word2vec` (implies `arch-cbow`, `task-cloze`, `task-context`)
 * GloVe: `pre-glove`
@@ -152,16 +165,8 @@ and no other tags need to be applied.
 * Variational Auto-encoder (VAE): `latent-vae`
 * Topic Model: `latent-topic`
 
-## Loss Functions (other than cross-entropy)
-
-* Canonical Correlation Analysis (CCA): `loss-cca`
-* Singular Value Decomposition (SVD): `loss-svd`
-* Margin-based Loss Functions: `loss-margin`
-* Contrastive Loss: `loss-cons`
-* Noise Contrastive Estimation (NCE): `loss-nce` (implies `loss-cons`)
-* Triplet loss: `loss-triplet` (implies `loss-cons`)
-
 ## Meta Learning
+
 * Meta-learning Initialization: `meta-init`
 * Meta-learning Optimizers: `meta-optim`
 * Meta-learning Loss functions: `meta-loss`

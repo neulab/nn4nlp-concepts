@@ -39,13 +39,15 @@ arch-gru	arch-rnn	Gated Recurrent Units|GRU|GRUs
 arch-cnn	null	Convolutional Neural Networks|CNNs|convolutional neural network
 arch-att	null	attention
 arch-selfatt	arch-att	Self Attention|self attention|self-attention
-# ---------- Other Sequential Architectures ----------
+# ---------- Architectural Techniques ----------
 arch-residual	null	residual connections
 arch-gating	null	gating connections|Highway
 arch-memo	null	memory network|external memory
 arch-copy	null	copy mechanism|copying mechanism
 # ---------- Standard Composite Architectures ----------
 arch-transformer	arch-selfatt	Transformer
+# ---------- Model Combination ----------
+comb-ensemble	null	ensemble|ensembling
 # ---------- Search Algorithms ----------
 search-greedy	null	Greedy Search|greedy search
 search-beam	null	Beam Search|beam search

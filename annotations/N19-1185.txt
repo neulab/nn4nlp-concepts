@@ -1,0 +1,9 @@
+# Title: Tweet Stance Detection Using an Attention based Neural Ensemble Model
+# Online location: https://www.aclweb.org/anthology/N19-1185.pdf
+optim-adam
+arch-bilstm
+reg-norm
+pool-max
+arch-cnn
+arch-att
+task-textclass
