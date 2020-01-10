@@ -1,0 +1,5 @@
+# Title: Embedding Imputation with Grounded Language Information
+# Online location: https://www.aclweb.org/anthology/P19-1326.pdf
+arch-gcnn
+activ-relu
+pre-glove
