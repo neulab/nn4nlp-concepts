@@ -8,6 +8,9 @@ optim-noam	optim-adam	specialized Transformer learning rate
 optim-momentum	optim-sgd	SGD with Momentum
 # ---------- Regularization ----------
 reg-dropout	null	Dropout|dropout
+reg-worddropout	null	word dropout
+reg-stopping	null	early stopping
+reg-patience	null	patience
 reg-norm	null	Norm (L1/L2) Regularization|L2 regularization
 reg-decay	null	weight decay
 reg-labelsmooth	null	label smooth

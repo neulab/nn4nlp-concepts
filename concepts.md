@@ -30,7 +30,10 @@ and no other tags need to be applied.
 ### Regularization
 
 * Dropout: `reg-dropout`
+* Word Dropout: `reg-worddropout` (implies `reg-dropout`)
 * Norm (L1/L2) Regularization: `reg-norm`
+* Early Stopping: `reg-stopping`
+* Patience: `reg-patience` (implies `reg-stopping`)
 * Weight Decay: `reg-decay`
 * Label Smoothing: `reg-labelsmooth`
 

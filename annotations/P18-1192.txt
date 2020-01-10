@@ -1,0 +1,11 @@
+# Title: Syntax for Semantic Role Labeling, To Be, Or Not To Be
+# Online location: https://www.aclweb.org/anthology/P18-1192.pdf
+optim-adam
+reg-worddropout
+arch-bilstm
+arch-cnn
+arch-gating
+pre-glove
+pre-word2vec
+task-seqlab
+task-relation

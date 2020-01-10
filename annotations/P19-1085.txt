@@ -1,0 +1,14 @@
+# Title: GEAR: Graph-based Evidence Aggregating and Reasoning for Fact Verification
+# Online location: https://www.aclweb.org/anthology/P19-1085.pdf
+optim-adam
+reg-patience
+arch-att
+arch-transformer
+arch-gnn
+activ-relu
+pool-max
+pool-mean
+pre-bert
+task-textpair
+# CHECK: confidence=0.9, justification=Matched regex language modeling|language model
+task-lm
