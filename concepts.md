@@ -26,6 +26,12 @@ and no other tags need to be applied.
 * Adadelta: `optim-adadelta` (implies `optim-sgd`)
 * Adam with Specialized Transformer Learning Rate ("Noam" Schedule): `optim-noam` (implies `optim-adam`)
 * SGD with Momentum: `optim-momentum` (implies `optim-sgd`)
+* AMS: `optim-momentum` (implies `optim-sgd`)
+
+### Initialization
+
+* Glorot/Xavier Initialization: `init-glorot`
+* He Initialization: `init-he`
 
 ### Regularization
 
@@ -97,6 +103,7 @@ and no other tags need to be applied.
 * Gating Connections, Highway Connections: `arch-gating`
 * Memory: `arch-memo`
 * Copy Mechanism: `arch-copy`
+* Bilinear Models: `arch-bilinear`
 
 ### Standard Composite Architectures
 

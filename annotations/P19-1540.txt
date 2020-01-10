@@ -1,0 +1,12 @@
+# Title: Ordinal and Attribute Aware Response Generation in a Multimodal Dialogue System
+# Online location: https://www.aclweb.org/anthology/P19-1540.pdf
+arch-bilinear
+reg-dropout
+init-glorot
+reg-dropout
+reg-labelsmooth
+norm-gradient
+arch-gru
+arch-selfatt
+search-beam
+task-condlm

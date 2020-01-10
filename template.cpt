@@ -6,6 +6,10 @@ optim-adagrad	optim-sgd Adagrad
 optim-adadelta	optim-sgd Adadelta
 optim-noam	optim-adam	specialized Transformer learning rate
 optim-momentum	optim-sgd	SGD with Momentum
+optim-amsgrad	optim-sgd	AMSGrad
+# ---------- Initialization ----------
+init-glorot	null	Xavier|Glorot
+init-he	null	He initialization
 # ---------- Regularization ----------
 reg-dropout	null	Dropout|dropout
 reg-worddropout	null	word dropout
@@ -44,6 +48,7 @@ arch-residual	null	residual connections
 arch-gating	null	gating connections|Highway
 arch-memo	null	memory network|external memory
 arch-copy	null	copy mechanism|copying mechanism
+arch-bilinear	null	bilinear|bi-linear
 # ---------- Standard Composite Architectures ----------
 arch-transformer	arch-selfatt	Transformer
 # ---------- Model Combination ----------
