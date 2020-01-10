@@ -1,0 +1,9 @@
+# Title: Automatic Generation of Personalized Comment Based on User Profile
+# Online location: https://www.aclweb.org/anthology/P19-2032.pdf
+arch-bilstm
+optim-sgd
+arch-att
+arch-memo
+arch-gating
+search-beam
+task-seq2seq

@@ -9,6 +9,7 @@ optim-momentum	optim-sgd	SGD with Momentum
 reg-dropout	null	Dropout|dropout
 reg-norm	null	Norm (L1/L2) Regularization|L2 regularization
 reg-decay	null	weight decay
+reg-labelsmooth	null	label smooth
 # ---------- Normalization ----------
 norm-layer	null	Layer Normalization|layer normalization
 norm-batch	null	Batch Normalization|batch normalization
@@ -84,7 +85,7 @@ task-tree	null	syntactic parsing|semantic parsing
 # ---------- Training Paradigms: Multi-task/Multi-lingual/Transfer ----------
 train-multitask	null	multi-task learning
 train-multiling	train-multitask	cross-lingual|multi-lingual|cross language
-train-tranfer	null	transfer learning|domain adaptation
+train-transfer	null	transfer learning|domain adaptation
 # ---------- Meta Learning ----------
 meta-init	null	MAML|Initialization
 meta-optim	null	meta optimizer|meta learner

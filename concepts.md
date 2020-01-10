@@ -32,6 +32,7 @@ and no other tags need to be applied.
 * Dropout: `reg-dropout`
 * Norm (L1/L2) Regularization: `reg-norm`
 * Weight Decay: `reg-decay`
+* Label Smoothing: `reg-labelsmooth`
 
 ### Normalization
 
