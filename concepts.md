@@ -20,10 +20,10 @@ and no other tags need to be applied.
 
 ### Optimizers
 
-* Mini-batch SGD: `optim-sgd`
-* Adam: `optim-adam` (implies `optim-sgd`)
-* Adagrad: `optim-adagrad` (implies `optim-sgd`)
-* Adadelta: `optim-adadelta` (implies `optim-sgd`)
+* Mini-batch SGD: [`optim-sgd`](http://pfliu.com/pl-nlp2019/bs/optim-sgd.html) 
+* Adam: [`optim-adam`](http://pfliu.com/pl-nlp2019/bs/optim-adam.html) (implies `optim-sgd`)
+* Adagrad: [`optim-adagrad`](http://pfliu.com/pl-nlp2019/bs/optim-adagrad.html) (implies `optim-sgd`)
+* Adadelta: [`optim-adadelta`](http://pfliu.com/pl-nlp2019/bs/optim-adadelta.html) (implies `optim-sgd`)
 * Adam with Specialized Transformer Learning Rate ("Noam" Schedule): `optim-noam` (implies `optim-adam`)
 * SGD with Momentum: `optim-momentum` (implies `optim-sgd`)
 * AMS: `optim-amsgrad` (implies `optim-sgd`)
