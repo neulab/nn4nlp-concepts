@@ -1,0 +1,10 @@
+# Title: Ranking Sentences for Extractive Summarization with Reinforcement Learning
+# Online location: https://www.aclweb.org/anthology/N18-1158.pdf
+optim-adam
+pool-max
+arch-lstm
+arch-cnn
+nondif-reinforce
+task-extractive
+task-seq2seq
+pre-word2vec

@@ -1,0 +1,8 @@
+# Title: One Size Does Not Fit All: Comparing NMT Representations of Different Granularities
+# Online location: https://www.aclweb.org/anthology/N19-1154.pdf
+optim-sgd
+arch-lstm
+arch-att
+arch-subword
+task-seqlab
+task-seq2seq

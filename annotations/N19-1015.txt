@@ -1,0 +1,9 @@
+# Title: Topic-Guided Variational Auto-Encoder for Text Generation
+# Online location: https://www.aclweb.org/anthology/N19-1015.pdf
+reg-dropout
+arch-gru
+arch-att
+latent-vae
+latent-topic
+task-lm
+task-seq2seq

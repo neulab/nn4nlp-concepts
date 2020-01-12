@@ -27,6 +27,9 @@ train-multitask	null	multi-task learning
 train-multiling	train-multitask	cross-lingual|multi-lingual|cross language
 train-transfer	null	transfer learning|domain adaptation
 train-active	null	active learning
+train-augment	null	data augmentation
+train-curriculum	null	data curriculum
+train-parallel	null	parallelism
 # ---------- Activation Functions ----------
 activ-tanh	null	Hyperbolic Tangent|hyperbolic tangent
 activ-relu	null	Rectified Linear Units|rectified linear
@@ -54,6 +57,8 @@ arch-gating	null	gating connections|Highway
 arch-memo	null	memory network|external memory
 arch-copy	null	copy mechanism|copying mechanism
 arch-bilinear	null	bilinear|bi-linear|biaffine|bi-affine
+arch-coverage	null	coverage
+arch-subword	null	subword|BPE|sentencepiece
 # ---------- Standard Composite Architectures ----------
 arch-transformer	arch-selfatt	Transformer
 # ---------- Model Combination ----------
@@ -70,6 +75,8 @@ pre-word2vec	null	word2vec|Word2vec
 pre-glove	null	glove|GloVe
 pre-elmo	null	ELMo
 pre-bert	null	BERT
+pre-skipthought	null	skipthought|skip-thought
+pre-use	null	Universal Sentence Encoder|universal sentence encoder
 # ---------- Pre-trained Embedding Techniques ----------
 struct-hmm	null	Hidden Markov Models|hidden markov
 struct-crf	null	Conditional Random Fields|conditional random fields|CRF
@@ -88,6 +95,7 @@ adv-examp	null	Adversarial Examples|adversarial examples
 adv-train	adv-examp	Adversarial Training|adversarial trainin
 # ---------- Latent Variable Models ----------
 latent-vae	null	Variational Auto-encoder|variational auto-encoder|latent variable
+latent-topic	null	topic model
 # ---------- Loss Functions ----------
 loss-cca	null	Canonical Correlation Analysis|canonical correlation analysis
 loss-svd	null	Singular Value Decomposition|SVD|singular value decomposition

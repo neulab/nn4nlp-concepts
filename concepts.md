@@ -65,6 +65,8 @@ and no other tags need to be applied.
 * Transfer Learning: `train-transfer`
 * Active Learning: `train-active`
 * Data Augmentation: `train-augment`
+* Curriculum Learning: `train-curriculum`
+* Parallel Training: `train-parallel`
 
 ## Sequence Modeling Architectures
 
@@ -105,6 +107,8 @@ and no other tags need to be applied.
 * Memory: `arch-memo`
 * Copy Mechanism: `arch-copy`
 * Bilinear, Biaffine Models: `arch-bilinear`
+* Coverage Vectors/Penalties: `arch-coverage`
+* Subword Units: `arch-subword`
 
 ### Standard Composite Architectures
 
@@ -149,6 +153,7 @@ and no other tags need to be applied.
 * Skip-thought: `pre-skipthought` (implies `arch-lstm`, `task-seq2seq`)
 * ELMo: `pre-elmo` (implies `arch-bilstm`, `task-lm`)
 * BERT: `pre-bert` (implies `arch-transformer`, `task-cloze`, `task-textpair`)
+* Universal Sentence Encoder (USE): `pre-use` (implies `arch-transformer`, `task-seq2seq`)
 
 ## Structured Models/Algorithms
 

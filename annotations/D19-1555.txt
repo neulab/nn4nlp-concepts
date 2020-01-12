@@ -1,0 +1,6 @@
+# Title: Leveraging Structural and Semantic Correspondence for Attribute-Oriented Aspect Sentiment Discovery
+# Online location: https://www.aclweb.org/anthology/D19-1555.pdf
+# CHECK: confidence=0.9, justification=Matched regex attention
+arch-att
+pre-word2vec
+pre-use

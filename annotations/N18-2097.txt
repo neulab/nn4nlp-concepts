@@ -1,0 +1,9 @@
+# Title: A Discourse-Aware Attention Model for Abstractive Summarization of Long Documents
+# Online location: https://www.aclweb.org/anthology/N18-2097.pdf
+arch-bilstm
+arch-att
+arch-copy
+arch-coverage
+search-beam
+optim-adagrad
+task-seq2seq
