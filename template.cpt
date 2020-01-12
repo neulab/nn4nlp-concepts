@@ -105,7 +105,7 @@ task-textclass	null	Text Classification|text classification
 task-textpair	null	natural language inference|semantic matching|question answering matching
 task-seqlab	null	named entity recognition|Part-of-Speech|word segmentation|text chunking
 task-extractive	task-seqlab	extractive summarization
-task-spanlab	null	span labeling
+task-spanlab	null	span labeling|machine reading comprehension|SQuAD
 task-lm	null	language model
 task-condlm	null	image caption
 task-seq2seq	null	machine translat|abstractive summarization
