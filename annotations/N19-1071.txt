@@ -1,0 +1,15 @@
+# Title: SEQˆ3: Differentiable Sequence-to-Sequence-to-Sequence Autoencoder for Unsupervised Abstractive Sentence Compression
+# Online location: https://www.aclweb.org/anthology/N19-1071.pdf
+optim-adam
+task-lm
+reg-dropout
+reg-worddropout
+norm-layer
+arch-birnn
+arch-lstm
+arch-att
+pre-glove
+nondif-reinforce
+adv-gan
+latent-vae
+task-seq2seq

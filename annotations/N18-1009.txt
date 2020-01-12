@@ -1,0 +1,8 @@
+# Title: Please Clap: Modeling Applause in Campaign Speeches
+# Online location: https://www.aclweb.org/anthology/N18-1009.pdf
+optim-adam
+reg-dropout
+arch-lstm
+arch-cnn
+task-textclass
+pre-skipthought

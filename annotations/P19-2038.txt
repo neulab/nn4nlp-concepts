@@ -1,0 +1,14 @@
+# Title: ARHNet - Leveraging Community Interaction for Detection of Religious Hate Speech in Arabic
+# Online location: https://www.aclweb.org/anthology/P19-2038.pdf
+optim-adam
+reg-dropout
+reg-norm
+arch-lstm
+arch-bilstm
+arch-gru
+arch-bigru
+arch-selfatt
+arch-gnn
+arch-cnn
+pre-word2vec
+task-textclass

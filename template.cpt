@@ -107,9 +107,9 @@ task-relation	null	dependency pars
 task-tree	null	syntactic pars|semantic pars
 task-graph	null	AMR|UDD
 task-lexicon	null	lexicon induction|bi-lingual embedding|embedding alignment|MUSE
-task-alignment	null	word alignment|GIZA++
+task-alignment	null	word alignment|GIZA
 # ---------- Meta Learning ----------
-meta-init	null	MAML|Initialization
+meta-init	null	MAML
 meta-optim	null	meta optimizer|meta learner
 meta-loss	null	meta learning loss
 meta-arch	null	architecture search

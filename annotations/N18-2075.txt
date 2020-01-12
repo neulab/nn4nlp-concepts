@@ -1,0 +1,5 @@
+# Title: Text Segmentation as a Supervised Learning Task
+# Online location: https://www.aclweb.org/anthology/N18-2075.pdf
+pool-max
+arch-bilstm
+pre-word2vec

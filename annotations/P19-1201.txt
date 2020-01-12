@@ -1,0 +1,12 @@
+# Title: Jointly Learning Semantic Parser and Natural Language Generator via Dual Information Maximization
+# Online location: https://www.aclweb.org/anthology/P19-1201.pdf
+optim-adam
+reg-patience
+train-multitask
+arch-bilstm
+arch-att
+arch-copy
+search-beam
+nondif-reinforce
+task-seq2seq
+task-tree

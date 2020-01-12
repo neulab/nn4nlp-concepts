@@ -18,7 +18,7 @@ And download the git submodule of the ACL Anthology:
 
 ## Examples:
 
-* 1: `python get_paper.py --years 18-19 --confs P  --n_sample 5 --template template.cpt --feature fulltext`
+* 1: `python get_paper.py --years 18-19 --confs "P,N,D"  --n_sample 2 --template template.cpt --feature fulltext`
 If the paper_id is not specified, 5 samples will be randomly selected from a pool of papers;
  
 * 2: `python get_paper.py --paper_id P19-1032 --template template.cpt --feature fulltext`
