@@ -26,7 +26,7 @@ and no other tags need to be applied.
 * Adadelta: `optim-adadelta` (implies `optim-sgd`)
 * Adam with Specialized Transformer Learning Rate ("Noam" Schedule): `optim-noam` (implies `optim-adam`)
 * SGD with Momentum: `optim-momentum` (implies `optim-sgd`)
-* AMS: `optim-momentum` (implies `optim-sgd`)
+* AMS: `optim-amsgrad` (implies `optim-sgd`)
 
 ### Initialization
 
@@ -146,6 +146,7 @@ and no other tags need to be applied.
 
 * word2vec: `pre-word2vec` (implies `arch-cbow`, `task-cloze`, `task-context`)
 * GloVe: `pre-glove`
+* ParaVector: `pre-pv`
 * Skip-thought: `pre-skipthought` (implies `arch-lstm`, `task-seq2seq`)
 * ELMo: `pre-elmo` (implies `arch-bilstm`, `task-lm`)
 * BERT: `pre-bert` (implies `arch-transformer`, `task-cloze`, `task-textpair`)

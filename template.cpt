@@ -27,6 +27,7 @@ train-multitask	null	multi-task learning
 train-multiling	train-multitask	cross-lingual|multi-lingual|cross language
 train-transfer	null	transfer learning|domain adaptation
 train-active	null	active learning
+train-augment	null	data augmentation|Data Augmentation
 # ---------- Activation Functions ----------
 activ-tanh	null	Hyperbolic Tangent|hyperbolic tangent
 activ-relu	null	Rectified Linear Units|rectified linear
@@ -36,12 +37,13 @@ pool-mean	null	Mean Pooling|mean pooling|Average Pooling|average pooling
 pool-kmax	null	k-Max Pooling|k-max pooling
 # ---------- Recurrent Architectures ----------
 arch-rnn	null	Recurrent Neural Network|RNN|recurrent neural networks
+arch-birnn	arch-rnn	Bi-directional Recurrent Neural Network|Bi-RNN|BiRNN
 arch-lstm	arch-rnn	Long Short-term Memory|LSTMs|LSTM
 arch-bilstm	arch-rnn	Bi-directional Long Short-term Memory|BiLSTM|BiLSTMs|Bi-LSTM|BLSTM
 arch-gru	arch-rnn	Gated Recurrent Units|GRU|GRUs
 arch-bigru	arch-rnn	Bi-directional GRU|Bi-GRU|BiGRU
 arch-recnn	null	Recursive Neural Network
-arch-treelstm	null	Tree-LSTM|TreeLSTM
+arch-treelstm	null	Tree-LSTM|TreeLSTM|Tree-structured Long Short-term Memory
 arch-gnn	null	Graph Neural Network|GNN
 arch-gcnn	null	Graph Convolutional Neural Network|GCNN
 # ---------- Other Sequential Architectures ----------
@@ -68,8 +70,10 @@ search-gumbel	search-sampling	Gumbel Max|gumbel max
 # ---------- Pre-trained Embedding Techniques ----------
 pre-word2vec	null	word2vec|Word2vec
 pre-glove	null	glove|GloVe
-pre-elmo	null	ELMo
-pre-bert	null	BERT
+pre-pv	null	paragraph vector|ParaVector
+pre-skipthought	task-seq2seq	Skip-thought|skip-thought
+pre-elmo	task-lm	ELMo
+pre-bert	arch-transformer	BERT
 # ---------- Pre-trained Embedding Techniques ----------
 struct-hmm	null	Hidden Markov Models|hidden markov
 struct-crf	null	Conditional Random Fields|conditional random fields|CRF
@@ -88,10 +92,14 @@ adv-examp	null	Adversarial Examples|adversarial examples
 adv-train	adv-examp	Adversarial Training|adversarial trainin
 # ---------- Latent Variable Models ----------
 latent-vae	null	Variational Auto-encoder|variational auto-encoder|latent variable
+latent-topic	null	Topic Model|topic model
 # ---------- Loss Functions ----------
 loss-cca	null	Canonical Correlation Analysis|canonical correlation analysis
 loss-svd	null	Singular Value Decomposition|SVD|singular value decomposition
 loss-margin	null	Margin-based Loss Functions|margin-based|ranking-based loss
+loss-cons	null	Contrastive Loss
+loss-nce	loss-cons	Noise Contrastive Estimation|NCE
+loss-triplet	loss-cons	Triplet loss|triplet loss
 # ---------- Prediction Tasks ----------
 task-textclass	null	Text Classification|text classification
 task-textpair	null	natural language inference|semantic matching|question answering matching
