@@ -1,0 +1,8 @@
+# Title: Sequence-to-Nuggets: Nested Entity Mention Detection via Anchor-Region Networks
+# Online location: https://www.aclweb.org/anthology/P19-1511.pdf
+arch-bilstm
+arch-cnn
+pre-glove
+optim-adadelta
+struct-crf
+task-seqlab

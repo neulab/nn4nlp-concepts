@@ -1,0 +1,7 @@
+# Title: Accelerating Asynchronous Stochastic Gradient Descent for Neural Machine Translation
+# Online location: https://www.aclweb.org/anthology/D18-1332.pdf
+train-parallel
+optim-adam
+norm-gradient
+arch-gru
+task-seq2seq

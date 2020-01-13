@@ -65,7 +65,8 @@ and no other tags need to be applied.
 * Transfer Learning: [`train-transfer`](http://pfliu.com/pl-nlp2019/bs/train-transfer.html)
 * Active Learning: [`train-active`](http://pfliu.com/pl-nlp2019/bs/train-active.html)
 * Data Augmentation: [`train-augment`](http://pfliu.com/pl-nlp2019/bs/train-augment.html)
-
+* Curriculum Learning: `train-curriculum`
+* Parallel Training: `train-parallel`
 
 ## Sequence Modeling Architectures
 
@@ -106,6 +107,8 @@ and no other tags need to be applied.
 * Memory: [`arch-memo`](http://pfliu.com/pl-nlp2019/bs/arch-memo.html)
 * Copy Mechanism: [`arch-copy`](http://pfliu.com/pl-nlp2019/bs/arch-copy.html)
 * Bilinear, Biaffine Models: [`arch-bilinear`](http://pfliu.com/pl-nlp2019/bs/arch-bilinear.html)
+* Coverage Vectors/Penalties: `arch-coverage`
+* Subword Units: `arch-subword`
 
 ### Standard Composite Architectures
 
@@ -151,6 +154,7 @@ and no other tags need to be applied.
 * Skip-thought: [`pre-skipthought`](http://pfliu.com/pl-nlp2019/bs/pre-skipthought.html) (implies `arch-lstm`, `task-seq2seq`)
 * ELMo: [`pre-elmo`](http://pfliu.com/pl-nlp2019/bs/pre-elmo.html) (implies `arch-bilstm`, `task-lm`)
 * BERT: [`pre-bert`](http://pfliu.com/pl-nlp2019/bs/pre-bert.html) (implies `arch-transformer`, `task-cloze`, `task-textpair`)
+* Universal Sentence Encoder (USE): `pre-use` (implies `arch-transformer`, `task-seq2seq`)
 
 ## Structured Models/Algorithms
 

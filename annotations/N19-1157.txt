@@ -1,0 +1,3 @@
+# Title: Quantifying the morphosyntactic content of Brown Clusters
+# Online location: https://www.aclweb.org/anthology/N19-1157.pdf
+not-neural
