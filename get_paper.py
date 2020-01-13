@@ -11,16 +11,25 @@ import time
 
 
 
-# paper_id:  
-# paper_meta: store meta information of a paper
-# cased_regexes: a collection of regular expressions based on concepts
-# feature: which part of content will we used to label papers. i.e. "title" or "fulltext"
-def labelPaper(paper_id = None, paper_meta = None, cased_regexes = None, feature = None): 
+def label_paper(paper_id = None, paper_meta = None, cased_regexes = None, feature = None):
+  """Label one paper
+
+  :param paper_id: The paper ID
+  :param paper_meta: Store meta information of a paper
+  :param cased_regexes: store meta information of a paper
+  :param feature: which part of content will we used to label papers. i.e. "title" or "fulltext"
+  :return: Nothing.
+  """
   if not os.path.isfile(f'papers/{paper_id}.pdf'):
     os.makedirs(f'papers/', exist_ok=True)
-    urllib.request.urlretrieve(f'https://www.aclweb.org/anthology/{paper_id}.pdf', f'papers/{paper_id}.pdf')
-    #time.sleep(2) # maybe we would wait some time until downloading processing finishes.
-    os.system(f'pdftotext papers/{paper_id}.pdf papers/{paper_id}.txt')
+    try:
+      urllib.request.urlretrieve(f'https://www.aclweb.org/anthology/{paper_id}.pdf', f'papers/{paper_id}.pdf')
+      # time.sleep(2) # maybe we would wait some time until downloading processing finishes.
+      os.system(f'pdftotext papers/{paper_id}.pdf papers/{paper_id}.txt')
+    except:
+      print(f'WARNING: Error while downloading/processing https://www.aclweb.org/anthology/{paper_id}.pdf')
+      return
+
   with open(f'papers/{paper_id}.txt', 'r') as f:
     paper_text = '\n'.join(f.readlines())
   paper_title = ''.join(paper_meta.title.findAll(text=True))
@@ -65,8 +74,9 @@ if __name__ == "__main__":
   parser.add_argument("--volumes", type=str, default="1,2",
                       help="A comma-separated list of volumes to include (default is long and short research papers)."+
                            " 'all' for no filtering.")
-  parser.add_argument("--n_sample", type=int, default="1",
-                      help="the number of sampled papers if paper_id is not specified (e.g. 1)")
+  parser.add_argument("--n_sample", type=str, default="1",
+                      help="the number of sampled papers if paper_id is not specified (e.g. 1)."
+                           " Write 'all' to select all papers from those years/conferences/volumes.")
 
   parser.add_argument("--template", type=str, default="template.cpt",
                       help="The file of concept template (e.g. template.cpt)")
@@ -106,17 +116,21 @@ if __name__ == "__main__":
             if pap.url:
               paper_map[pap.url.contents[0]] = pap
 
-
     paper_keys = list(paper_map.keys())
-    for _ in range(n_sample):
-      randid = random.choice(paper_keys)
-      if not os.path.isfile(f'annotations/{randid}.txt') and not os.path.isfile(f'auto/{randid}.txt'):
-        paper_id = randid
+    if n_sample == 'all':
+      for paper_id in paper_keys:
         paper_meta = paper_map[paper_id]
-        #print(paper_meta)
-        labelPaper(paper_id, paper_meta, cased_regexes, feature)
-      else:
-        print(f'Warning: {paper_id} has been labeled!')
+        label_paper(paper_id, paper_meta, cased_regexes, feature)
+    else:
+      for _ in range(int(n_sample)):
+        randid = random.choice(paper_keys)
+        if not os.path.isfile(f'annotations/{randid}.txt') and not os.path.isfile(f'auto/{randid}.txt'):
+          paper_id = randid
+          paper_meta = paper_map[paper_id]
+          #print(paper_meta)
+          label_paper(paper_id, paper_meta, cased_regexes, feature)
+        else:
+          print(f'Warning: {paper_id} has been labeled!')
 
   # if paper_id is specified
   else:
@@ -130,7 +144,7 @@ if __name__ == "__main__":
                   paper_map[pap.url.contents[0]] = pap
                   #print(paper_map[pap.url.contents[0]])
                   if not os.path.isfile(f'annotations/{paper_id}.txt') and not os.path.isfile(f'auto/{paper_id}.txt'):
-                      labelPaper(paper_id, paper_map[paper_id], cased_regexes, feature)
+                      label_paper(paper_id, paper_map[paper_id], cased_regexes, feature)
                       sys.exit(1)
                   else:
                     print(f'Warning: {paper_id} has been labeled!')

@@ -3,3 +3,6 @@ __pycache__
 .idea
 papers/
 auto/
+auto.tsv
+annotations.tsv
+*.swp

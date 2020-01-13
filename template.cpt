@@ -23,8 +23,8 @@ norm-layer	null	Layer Normalization|layer normalization
 norm-batch	null	Batch Normalization|batch normalization
 norm-gradient	null	gradient clipping|gradient normalization|clipnorm
 # ---------- Training Paradigms: Multi-task/Multi-lingual/Transfer ----------
-train-multitask	null	multi-task learning
-train-multiling	train-multitask	cross-lingual|multi-lingual|cross language
+train-mtl	null	multi-task learning
+train-mll	train-multitask	cross-lingual|multi-lingual|cross language
 train-transfer	null	transfer learning|domain adaptation
 train-active	null	active learning
 train-augment	null	data augmentation|Data Augmentation
@@ -74,7 +74,7 @@ search-gumbel	search-sampling	Gumbel Max|gumbel max
 # ---------- Pre-trained Embedding Techniques ----------
 pre-word2vec	null	word2vec|Word2vec
 pre-glove	null	glove|GloVe
-pre-pv	null	paragraph vector|ParaVector
+pre-paravec	null	paragraph vector|ParaVector
 pre-skipthought	task-seq2seq	Skip-thought|skip-thought|skipthought
 pre-elmo	task-lm	ELMo
 pre-bert	arch-transformer	BERT

@@ -3,9 +3,6 @@ import matplotlib
 matplotlib.use('Agg')
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-import sys
-import string
 import argparse
 #%matplotlib inline
 
@@ -24,21 +21,21 @@ plt.rcParams['text.color']='#333F4B'
 
 
 parser = argparse.ArgumentParser(description='Draw Bar')
-parser.add_argument('--csv', default='input.csv', help='input file separted by \'\\t\' ')
+parser.add_argument('--tsv', default='input.tsv', help='input file separted by \'\\t\' ')
 parser.add_argument('--fig', default='out.png', help='the output figure')
 
 args = parser.parse_args()
 
-csv_file = unicode(args.csv)
-fig_file = unicode(args.fig)
+tsv_file = args.tsv
+fig_file = args.fig
 
-fin = open(csv_file,"r")
+fin = open(tsv_file,"r")
 cpt_list = []
 val_list = []
 for line in fin:
 	line = line.strip()
 	cpt, val = line.split("\t")
-	val_list.append(string.atoi(val))
+	val_list.append(int(val))
 	cpt_list.append(cpt)  
 fin.close()
 
