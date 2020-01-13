@@ -146,7 +146,7 @@ and no other tags need to be applied.
 
 * word2vec: `pre-word2vec` (implies `arch-cbow`, `task-cloze`, `task-context`)
 * GloVe: `pre-glove`
-* ParaVector: `pre-pv`
+* Paragraph Vector (ParaVec): `pre-paravec`
 * Skip-thought: `pre-skipthought` (implies `arch-lstm`, `task-seq2seq`)
 * ELMo: `pre-elmo` (implies `arch-bilstm`, `task-lm`)
 * BERT: `pre-bert` (implies `arch-transformer`, `task-cloze`, `task-textpair`)
