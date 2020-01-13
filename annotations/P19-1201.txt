@@ -2,7 +2,7 @@
 # Online location: https://www.aclweb.org/anthology/P19-1201.pdf
 optim-adam
 reg-patience
-train-multitask
+train-mtl
 arch-bilstm
 arch-att
 arch-copy

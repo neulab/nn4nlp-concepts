@@ -1,6 +1,6 @@
 # Title: Understanding Learning Dynamics Of Language Models with SVCCA
 # Online location: https://www.aclweb.org/anthology/N19-1329.pdf
-embed-elmo
+pre-elmo
 arch-lstm
 loss-cca
 loss-svd

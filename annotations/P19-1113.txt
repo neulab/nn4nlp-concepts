@@ -4,7 +4,7 @@ reg-dropout
 optim-adadelta
 arch-lstm
 arch-gru
-train-multitask
+train-mtl
 arch-att
 task-textclass
 pre-word2vec
