@@ -31,6 +31,14 @@ where:
 * `template`: the file of concept template (e.g. template.cpt)
 * `feature`: which part of paper is used to classify (e.g. fulltext or title)
 
+## Statistics based on Concepts
+The script draw_bar.py  can be used to draw a bar chart that illustrates the frequency of each concept on all the papers. For example, 
+
+``python draw_bar.py --csv log.abs --fig abs.png``:
+
+``log.abs`` is an input file, each line of which is as: concept \t frequency.
+`abs.png`   is the output figure.
+
 ## How to Contribute
 
 1. Read `concepts.md` to learn more about the concepts that are annotated here.
