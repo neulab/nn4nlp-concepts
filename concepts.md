@@ -141,7 +141,7 @@ and no other tags need to be applied.
 * Cloze-style Prediction, Masked Language Modeling (right and left context -> word): [`task-cloze`](http://pfliu.com/pl-nlp2019/bs/task-cloze.html)
 * Context Prediction (as in word2vec) (word -> right and left context): [`task-context`](http://pfliu.com/pl-nlp2019/bs/task-context.html)
 * Relation Prediction (text -> graph of relations between words, including dependency parsing): [`task-relation`](http://pfliu.com/pl-nlp2019/bs/task-relation.html)
-* Tree Prediction (text -> tree, including syntactic and some semantic semantic parsing): [`task-tree`
+* Tree Prediction (text -> tree, including syntactic and some semantic semantic parsing): [`task-tree`](http://pfliu.com/pl-nlp2019/bs/task-tree.html)
 * Graph Prediction (text -> graph not necessarily between nodes): [`task-graph`](http://pfliu.com/pl-nlp2019/bs/task-graph.html)
 * Lexicon Induction/Embedding Alignment (text/embeddings -> bi- or multi-lingual lexicon): [`task-lexicon`](http://pfliu.com/pl-nlp2019/bs/task-lexicon.html)
 * Word Alignment (parallel text -> alignment between words): [`task-alignment`](http://pfliu.com/pl-nlp2019/bs/task-alignment.html)
