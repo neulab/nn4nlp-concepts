@@ -35,7 +35,7 @@ and no other tags need to be applied.
 
 ### Regularization
 
-* Dropout: [`reg-dropout`]
+* Dropout: [`reg-dropout`](http://pfliu.com/pl-nlp2019/bs/reg-dropout.html)
 * Word Dropout: [`reg-worddropout`](http://pfliu.com/pl-nlp2019/bs/reg-worddropout.html) (implies `reg-dropout`)
 * Norm (L1/L2) Regularization: [`reg-norm`](http://pfliu.com/pl-nlp2019/bs/reg-norm.html)
 * Early Stopping: [`reg-stopping`](http://pfliu.com/pl-nlp2019/bs/reg-stopping.html)
