@@ -78,3 +78,6 @@ following command, which will download the papers from all the specified confere
     python aggregate_tags.py auto --concepts concepts.md > auto.tsv
     python draw_bar.py --tsv auto.tsv --fig auto.png
 
+## Acknowledgements
+
+Thanks to Yoav Goldberg and the [TAS for CS11-747](http://phontron.com/class/nn4nlp2020/description.html) who gave feedback on the categorization of concepts. Also, thanks, of course, to everyone who has contributed or will contribute.
