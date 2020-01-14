@@ -27,7 +27,7 @@ and no other tags need to be applied.
 * Adam with Specialized Transformer Learning Rate ("Noam" Schedule): [`optim-noam`](http://pfliu.com/pl-nlp2019/bs/optim-noam.html) (implies `optim-adam`)
 * SGD with Momentum: [`optim-momentum`](http://pfliu.com/pl-nlp2019/bs/optim-momentum.html) (implies `optim-sgd`)
 * AMS: [`optim-amsgrad`](http://pfliu.com/pl-nlp2019/bs/optim-amsgrad.html) (implies `optim-sgd`)
-* Projection / Projected Gradient Descent: `train-projection` (implies `optim-sgd`)
+* Projection / Projected Gradient Descent: `optim-projection` (implies `optim-sgd`)
 
 ### Initialization
 

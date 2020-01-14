@@ -1,5 +1,5 @@
 # Concepts in Neural Networks for NLP
-by Graham Neubig, Pengfei Liu, and other contributors
+by [Graham Neubig](http://phontron.com), [Pengfei Liu](http://pfliu.com), and other contributors
 
 This is a repository that makes an attempt to empirically take stock of the **most important concepts necessary to
 understand cutting-edge research in neural network models for NLP**. You look at two figures below, generated
@@ -9,10 +9,10 @@ to see a more complete description of what each of the tags below means, and als
 to the project, or want to figure out how to generate the graphs yourself.
 
 Manually Annotated Concepts
-![Manually Annotated Concepts in Neural Nets for NLP](annotations.png)
+![Manually Annotated Concepts in Neural Nets for NLP](fig/annotations.png)
 
 Automatically Annotated Concepts (from ACL, EMNLP, and NAACL 2019)
-![Automatically Annotated Concepts in Neural Nets for NLP](auto.png)
+![Automatically Annotated Concepts in Neural Nets for NLP](fig/auto.png)
 
 ## Contributing
 
