@@ -2,10 +2,10 @@
 by [Graham Neubig](http://phontron.com), [Pengfei Liu](http://pfliu.com), and other contributors
 
 This is a repository that makes an attempt to empirically take stock of the **most important concepts necessary to
-understand cutting-edge research in neural network models for NLP**. You look at two figures below, generated
+understand cutting-edge research in neural network models for NLP**. You can look at two figures below, generated
 automatically and through manual annotation, to see which of these topics are most common in current NLP research in
-NLP (in recent papers in the [ACL anthology](http://aclanthology.info). See the [list of concepts](concepts.md)
-to see a more complete description of what each of the tags below means, and also see below if you want to contribute
+NLP (in recent papers in the [ACL anthology](http://aclanthology.info)). See the [list of concepts](concepts.md)
+to see a more complete description of what each of the tags below means, and also see the directions below the figures if you want to contribute
 to the project, or want to figure out how to generate the graphs yourself.
 
 ![Manually Annotated Concepts in Neural Nets for NLP](fig/annotations.png)
