@@ -1,0 +1,6 @@
+# Title: Unsupervised Bilingual Lexicon Induction via Latent Variable Models
+# Online location: https://www.aclweb.org/anthology/D18-1062.pdf
+train-mll
+adv-train
+latent-vae
+task-lexicon

@@ -1,0 +1,13 @@
+# Title: Free as in Free Word Order: An Energy Based Model for Word Segmentation and Morphological Tagging in Sanskrit
+# Online location: https://www.aclweb.org/anthology/D18-1276.pdf
+init-glorot
+arch-lstm
+arch-att
+arch-subword
+arch-gnn
+arch-energy
+search-beam
+struct-crf
+task-seqlab
+task-seq2seq
+loss-margin

@@ -1,0 +1,6 @@
+# Title: Identifying Transferable Information Across Domains for Cross-domain Sentiment Classification
+# Online location: https://www.aclweb.org/anthology/P18-1089.pdf
+train-transfer
+comb-ensemble
+pre-word2vec
+task-textclass

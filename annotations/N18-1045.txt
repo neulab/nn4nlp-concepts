@@ -1,0 +1,5 @@
+# Title: Distributional Inclusion Vector Embedding for Unsupervised Hypernymy Detection
+# Online location: https://www.aclweb.org/anthology/N18-1045.pdf
+pre-word2vec
+optim-adam
+optim-projection

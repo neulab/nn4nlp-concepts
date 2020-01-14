@@ -1,0 +1,7 @@
+# Title: Nugget Proposal Networks for Chinese Event Detection
+# Online location: https://www.aclweb.org/anthology/P18-1145.pdf
+arch-bilstm
+arch-cnn
+arch-gating
+task-seqlab
+activ-tanh

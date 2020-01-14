@@ -7,6 +7,7 @@ optim-adadelta	optim-sgd Adadelta
 optim-noam	optim-adam	specialized Transformer learning rate
 optim-momentum	optim-sgd	SGD with Momentum
 optim-amsgrad	optim-sgd	AMSGrad
+optim-projection	optim-sgd	projection|projected gradient descent
 # ---------- Initialization ----------
 init-glorot	null	Xavier|Glorot
 init-he	null	He initialization
@@ -60,6 +61,7 @@ arch-copy	null	copy mechanism|copying mechanism
 arch-bilinear	null	bilinear|bi-linear|biaffine|bi-affine
 arch-coverage	null	coverage
 arch-subword	null	subword|BPE|sentencepiece
+arch-energy	null	energy-based|globally normalized|global normalization
 # ---------- Standard Composite Architectures ----------
 arch-transformer	arch-selfatt	Transformer
 # ---------- Model Combination ----------
@@ -73,6 +75,7 @@ search-sampling	null	Ancestral Sampling|ancestral sampling
 search-gumbel	search-sampling	Gumbel Max|gumbel max
 # ---------- Pre-trained Embedding Techniques ----------
 pre-word2vec	null	word2vec|Word2vec
+pre-fasttext	null	fasttext|FastText|fastText
 pre-glove	null	glove|GloVe
 pre-paravec	null	paragraph vector|ParaVector
 pre-skipthought	task-seq2seq	Skip-thought|skip-thought|skipthought

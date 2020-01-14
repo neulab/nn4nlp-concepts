@@ -1,0 +1,7 @@
+# Title: Siamese Network-Based Supervised Topic Modeling
+# Online location: https://www.aclweb.org/anthology/D18-1494.pdf
+reg-stopping
+arch-subword
+pre-word2vec
+latent-topic
+task-textclass
