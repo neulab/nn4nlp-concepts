@@ -23,6 +23,7 @@ plt.rcParams['text.color']='#333F4B'
 parser = argparse.ArgumentParser(description='Draw Bar')
 parser.add_argument('--tsv', default='input.tsv', help='input file separted by \'\\t\' ')
 parser.add_argument('--fig', default='out.png', help='the output figure')
+parser.add_argument('--title', default='Concept Count in All Papers', help='the title of the graph')
 
 args = parser.parse_args()
 
@@ -58,7 +59,7 @@ plt.hlines(y=my_range, xmin=0, xmax=df['percentage'], color='#007ACC', alpha=0.2
 plt.plot(df['percentage'], my_range, "o", markersize=5, color='#007ACC', alpha=0.6)
 
 # set labels
-ax.set_xlabel('Coverage', fontsize=15, fontweight='black', color = '#333F4B')
+ax.set_xlabel(args.title, fontsize=15, fontweight='black', color = '#333F4B')
 ax.xaxis.set_label_position('top')
 ax.xaxis.tick_top() 
 #ax.set_ylabel('')

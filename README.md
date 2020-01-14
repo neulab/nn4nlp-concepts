@@ -8,10 +8,8 @@ NLP (in recent papers in the [ACL anthology](http://aclanthology.info). See the 
 to see a more complete description of what each of the tags below means, and also see below if you want to contribute
 to the project, or want to figure out how to generate the graphs yourself.
 
-Manually Annotated Concepts
 ![Manually Annotated Concepts in Neural Nets for NLP](fig/annotations.png)
 
-Automatically Annotated Concepts (from ACL, EMNLP, and NAACL 2019)
 ![Automatically Annotated Concepts in Neural Nets for NLP](fig/auto.png)
 
 ## Contributing
