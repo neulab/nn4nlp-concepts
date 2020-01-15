@@ -59,6 +59,7 @@ where:
 * `n_sample`: the number of sampled papers if paper_id is not specified
 * `template`: the file of concept template (e.g. template.cpt)
 * `feature`: which part of paper is used to classify (e.g. fulltext or title)
+* `n_ref`: number of reference papers used to analyze tags
 
 ## Generating Aggregate Statistics/Charts
 
