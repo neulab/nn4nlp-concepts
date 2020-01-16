@@ -90,16 +90,17 @@ and no other tags need to be applied.
 * Bi-directional Long Short-term Memory (LSTM): [`arch-bilstm`](http://pfliu.com/pl-nlp2019/bs/arch-bilstm.html) (implies `arch-birnn`, `arch-lstm`)
 * Gated Recurrent Units (GRU): [`arch-gru`](http://pfliu.com/pl-nlp2019/bs/arch-gru.html) (implies `arch-rnn`)
 * Bi-directional Gated Recurrent Units (GRU): [`arch-bigru`](http://pfliu.com/pl-nlp2019/bs/arch-bigru.html) (implies `arch-birnn`, `arch-gru`)
+
+### Other Sequential/Structured Architectures
+
+* Bag-of-words, Bag-of-embeddings, Continuous Bag-of-words (BOW): `arch-bow`
+* Convolutional Neural Networks (CNN): [`arch-cnn`](http://pfliu.com/pl-nlp2019/bs/arch-cnn.html)
+* Attention: [`arch-att`](http://pfliu.com/pl-nlp2019/bs/arch-att.html)
+* Self Attention: [`arch-selfatt`](http://pfliu.com/pl-nlp2019/bs/arch-selfatt.html) (implies `arch-att`)
 * Recursive Neural Network (RecNN): [`arch-recnn`](http://pfliu.com/pl-nlp2019/bs/arch-recnn.html)
 * Tree-structured Long Short-term Memory (TreeLSTM): [`arch-treelstm`](http://pfliu.com/pl-nlp2019/bs/arch-treelstm.html) (implies `arch-recnn`)
 * Graph Neural Network (GNN): [`arch-gnn`](http://pfliu.com/pl-nlp2019/bs/arch-gnn.html)
 * Graph Convolutional Neural Network (GCNN): [`arch-gcnn`](http://pfliu.com/pl-nlp2019/bs/arch-gcnn.html) (implies `arch-gnn`)
-
-### Other Sequential Architectures
-
-* Convolutional Neural Networks (CNN): [`arch-cnn`](http://pfliu.com/pl-nlp2019/bs/arch-cnn.html)
-* Attention: [`arch-att`](http://pfliu.com/pl-nlp2019/bs/arch-att.html)
-* Self Attention: [`arch-selfatt`](http://pfliu.com/pl-nlp2019/bs/arch-selfatt.html) (implies `arch-att`)
 
 ### Architectural Techniques
 

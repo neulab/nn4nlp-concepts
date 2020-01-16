@@ -45,14 +45,15 @@ arch-lstm	arch-rnn	Long Short-term Memory|LSTMs|LSTM
 arch-bilstm	arch-rnn	Bi-directional Long Short-term Memory|BiLSTM|BiLSTMs|Bi-LSTM|BLSTM
 arch-gru	arch-rnn	Gated Recurrent Units|GRU|GRUs
 arch-bigru	arch-rnn	Bi-directional GRU|Bi-GRU|BiGRU
+# ---------- Other Sequential Architectures ----------
+arch-bow	null	bag-of-words|bag-of-embeddings|deep averaging network
+arch-cnn	null	Convolutional Neural Networks|CNNs|convolutional neural network
+arch-att	null	attention
+arch-selfatt	arch-att	Self Attention|self attention|self-attention
 arch-recnn	null	Recursive Neural Network
 arch-treelstm	null	Tree-LSTM|TreeLSTM|Tree-structured Long Short-term Memory
 arch-gnn	null	Graph Neural Network|GNN
 arch-gcnn	null	Graph Convolutional Neural Network|GCNN
-# ---------- Other Sequential Architectures ----------
-arch-cnn	null	Convolutional Neural Networks|CNNs|convolutional neural network
-arch-att	null	attention
-arch-selfatt	arch-att	Self Attention|self attention|self-attention
 # ---------- Architectural Techniques ----------
 arch-residual	null	residual connections
 arch-gating	null	gating connections|Highway
