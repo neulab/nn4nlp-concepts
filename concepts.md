@@ -27,7 +27,7 @@ and no other tags need to be applied.
 * Adam with Specialized Transformer Learning Rate ("Noam" Schedule): [`optim-noam`](http://pfliu.com/pl-nlp2019/bs/optim-noam.html) (implies `optim-adam`)
 * SGD with Momentum: [`optim-momentum`](http://pfliu.com/pl-nlp2019/bs/optim-momentum.html) (implies `optim-sgd`)
 * AMS: [`optim-amsgrad`](http://pfliu.com/pl-nlp2019/bs/optim-amsgrad.html) (implies `optim-sgd`)
-* Projection / Projected Gradient Descent: `optim-projection` (implies `optim-sgd`)
+* Projection / Projected Gradient Descent: [`optim-projection`](http://pfliu.com/pl-nlp2019/bs/optim-projection.html) (implies `optim-sgd`)
 
 ### Initialization
 
@@ -111,7 +111,7 @@ and no other tags need to be applied.
 * Bilinear, Biaffine Models: [`arch-bilinear`](http://pfliu.com/pl-nlp2019/bs/arch-bilinear.html)
 * Coverage Vectors/Penalties: [`arch-coverage`](http://pfliu.com/pl-nlp2019/bs/arch-coverage.html)
 * Subword Units: [`arch-subword`](http://pfliu.com/pl-nlp2019/bs/arch-subword.html)
-* Energy-based, Globally-normalized Mdels: `arch-energy`
+* Energy-based, Globally-normalized Mdels: [`arch-energy`](http://pfliu.com/pl-nlp2019/bs/arch-energy.html)
 
 ### Standard Composite Architectures
 
@@ -152,7 +152,7 @@ and no other tags need to be applied.
 ## Composite Pre-trained Embedding Techniques
 
 * word2vec: [`pre-word2vec`](http://pfliu.com/pl-nlp2019/bs/pre-word2vec.html) (implies `arch-cbow`, `task-cloze`, `task-context`)
-* fasttext: `pre-fasttext` (implies `arch-cbow`, `arch-subword`, `task-cloze`, `task-context`)
+* fasttext: [`pre-fasttext`](http://pfliu.com/pl-nlp2019/bs/pre-fasttext.html) (implies `arch-cbow`, `arch-subword`, `task-cloze`, `task-context`)
 * GloVe: [`pre-glove`](http://pfliu.com/pl-nlp2019/bs/pre-glove.html)
 * Paragraph Vector (ParaVec): [`pre-paravec`](http://pfliu.com/pl-nlp2019/bs/pre-paravec.html)
 * Skip-thought: [`pre-skipthought`](http://pfliu.com/pl-nlp2019/bs/pre-skipthought.html) (implies `arch-lstm`, `task-seq2seq`)
