@@ -22,7 +22,7 @@ def generate_concept_regex(file_concept="test.cpt", format_col=3):
     os._exit(0)
 
   cased_regexes = []
-  with open(file_concept,"r") as f:
+  with open(file_concept, "r") as f:
     for line in f:
       line = line.rstrip("\n")
       if (len(line.split("\t")) != format_col) or (line[0] == "#"):

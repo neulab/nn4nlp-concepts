@@ -48,7 +48,7 @@ Then download the ACL Anthology github repository:
 **Examples Running `get_paper.py`**
 
 Get random papers to annotate:
-* 1: `python get_paper.py --years 18-19 --confs "P,N,D"  --n_sample 2 --template template.cpt --feature fulltext`
+* 1: `python get_paper.py --years 18-19 --confs "P,N,D" --n_sample 2 --template template.cpt --feature fulltext`
  
 Get a specific paper to annotate:
 * 2: `python get_paper.py --paper_id P19-1032 --template template.cpt --feature fulltext`
@@ -59,7 +59,7 @@ where:
 * `n_sample`: the number of sampled papers if paper_id is not specified
 * `template`: the file of concept template (e.g. template.cpt)
 * `feature`: which part of paper is used to classify (e.g. fulltext or title)
-* `n_ref`: number of reference papers used to analyze tags
+* `use_cite`: whether to use citation papers (c.f. `paper_id` should be specified to use citation papers)
 
 ## Generating Aggregate Statistics/Charts
 

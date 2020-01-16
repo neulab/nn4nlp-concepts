@@ -8,80 +8,7 @@ import urllib.request
 import bs4 as bs
 import time
 
-from utils import get_references, label_references
-
-
-def label_paper(paper_id=None, paper_meta=None, cased_regexes=None, feature=None, n_ref=0):
-  """Label one paper
-
-  Args:
-    paper_id (str): The paper ID
-    paper_meta (bs4.element.Tag): Store meta information of a paper
-    cased_regexes (list): Regex information used to paper labeling
-    feature (str): which part of content will we use to label papers (e.g. "title" or "fulltext")
-    n_ref (int): number of reference papers used to analyze
-  
-  Returns:
-    None
-  """
-
-  if not os.path.isfile(f'papers/{paper_id}.pdf'):
-    os.makedirs(f'papers/', exist_ok=True)
-    try:
-      urllib.request.urlretrieve(f'https://www.aclweb.org/anthology/{paper_id}.pdf', f'papers/{paper_id}.pdf')
-      # time.sleep(2) # maybe we would wait some time until downloading processing finishes.
-      os.system(f'pdftotext papers/{paper_id}.pdf papers/{paper_id}.txt')
-    except:
-      print(f'WARNING: Error while downloading/processing https://www.aclweb.org/anthology/{paper_id}.pdf')
-      return
-
-  with open(f'papers/{paper_id}.txt', 'r') as f:
-    paper_text = '\n'.join(f.readlines())
-  paper_title = paper_meta.title.text
-
-  is_cased = True # if case-sensitive
-  if feature == "title":
-    contents = paper_title
-    is_cased = False
-  elif feature == "fulltext":
-    contents = paper_text
-    is_cased = True
-
-  predicted_tags = paper_classifier.classify(contents, cased_regexes, is_cased)
-
-  reference_tags = dict()
-  if (n_ref > 0) and paper_meta.doi:  # if analyze reference papers
-    paper_doi = paper_meta.doi.text.lower()
-    refs = get_references(paper_doi, n_ref)
-
-    if not refs:
-      print(f'WARNING: Cannot fetch reference paper information of {paper_id}')
-    else:
-      reference_tags = dict(label_references(refs, feature, cased_regexes, is_cased))
-  
-  # Display result
-  print(f'Title: {paper_title}\n'
-        f'Local location: papers/{paper_id}.pdf\n'
-        f'Online location: https://www.aclweb.org/anthology/{paper_id}.pdf\n'
-        f'Text file location: auto/{paper_id}.txt')
-  for i, tag in enumerate(predicted_tags):
-    print(f'Tag {i+1}: {tag}')
-  print("------------------------------------------------\n")
-  
-  # Store result
-  os.makedirs(f'auto/', exist_ok=True)
-  with open(f'auto/{paper_id}.txt', 'w') as f:
-    print(f'# Title: {paper_title}\n# Online location: https://www.aclweb.org/anthology/{paper_id}.pdf', file=f)
-    for tag, conf, just in predicted_tags:
-      if tag in reference_tags:
-        just += f', {reference_tags[tag]} occurrences in the refs'
-        del reference_tags[tag]
-      print(f'# CHECK: confidence = {conf}, justification = {just}\n{tag}',file=f)
-    print("------------------------------------------------", file=f)
-    
-    if reference_tags:  # if there are more tags in the reference
-      for elem in reference_tags:
-        print(f'# CHECK: justification = {reference_tags[elem]} occurrences in the reference papers\n{elem}',file=f)
+from utils import label_paper
 
 
 if __name__ == "__main__":
@@ -104,8 +31,8 @@ if __name__ == "__main__":
                       help="The file of concept template (e.g. template.cpt)")
   parser.add_argument("--feature", type=str, default="fulltext",
                       help="Which parts of paper is used to classify (e.g. fulltext|title)")
-  parser.add_argument("--n_ref", type=int, default=0,
-                      help="The number of reference papers used to look up")
+  parser.add_argument("--use_cite", type=bool, default=False,
+                      help="whether to use citation papers")
 
   args = parser.parse_args()
 
@@ -115,7 +42,7 @@ if __name__ == "__main__":
   template  = args.template
   n_sample  = args.n_sample
   volumes   = args.volumes.split(',')
-  n_ref     = args.n_ref
+  use_cite  = args.use_cite
   paper_map = {}
 
   # read the concept template
@@ -144,14 +71,14 @@ if __name__ == "__main__":
     if n_sample == 'all':
       for paper_id in paper_keys:
         paper_meta = paper_map[paper_id]
-        label_paper(paper_id, paper_meta, cased_regexes, feature, n_ref)
+        label_paper(paper_id, paper_meta, cased_regexes, feature, False)
     else:
       for _ in range(int(n_sample)):
         randid = random.choice(paper_keys)
-        if not os.path.isfile(f'annotations/{randid}.txt') and not os.path.isfile(f'auto/{randid}.txt'):
+        if not os.path.exists(f'annotations/{randid}.txt') and not os.path.exists(f'auto/{randid}.txt'):
           paper_id = randid
           paper_meta = paper_map[paper_id]
-          label_paper(paper_id, paper_meta, cased_regexes, feature, n_ref)
+          label_paper(paper_id, paper_meta, cased_regexes, feature, False)
         else:
           print(f'Warning: {paper_id} has been labeled!')
 
@@ -166,11 +93,18 @@ if __name__ == "__main__":
               for pap in vol.find_all('paper'):
                 if (pap.url) and (pap.url.contents[0] == paper_id):
                   paper_map[pap.url.contents[0]] = pap
-                  if not os.path.isfile(f'annotations/{paper_id}.txt') and not os.path.isfile(f'auto/{paper_id}.txt'):
-                      label_paper(paper_id, paper_map[paper_id], cased_regexes, feature, n_ref)
-                      sys.exit(1)
+                  if use_cite:  # if use citation information
+                    if not os.path.exists(f'annotations/{paper_id}.txt'):
+                      print(f'Warning: {paper_id} has not been labeled! We should label it first')
+                      print(f'Warning: If you already labeled it, move labeled file into annotations directory')
+                    else:
+                      label_paper(paper_id, paper_map[paper_id], cased_regexes, feature, use_cite)
                   else:
-                    print(f'Warning: {paper_id} has been labeled!')
+                    if not os.path.exists(f'annotations/{paper_id}.txt') and not os.path.exists(f'auto/{paper_id}.txt'):
+                      label_paper(paper_id, paper_map[paper_id], cased_regexes, feature, False)
+                      sys.exit(1)
+                    else:
+                      print(f'Warning: {paper_id} has been labeled!')
 
     if len(paper_map) == 0:
       print(f'Warning: {paper_id} cannot be found!')
