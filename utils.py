@@ -104,7 +104,7 @@ def get_citations(id=None, doi=None):
 
 
 def label_citation_papers(refs, tags, paper_id):
-  """Label papers which citated already "known" paper
+  """Label papers which cited already "known" paper
 
   Args:
     refs (list): DOI list of citation papers
